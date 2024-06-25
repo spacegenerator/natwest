@@ -1,0 +1,38 @@
+- name: Variable Demo as User Creation
+  hosts: dev,spain
+  gather_facts: false
+  vars:
+    user_comment: "Level 12 play vars"
+  vars_prompt:
+    - name: user_comment
+      prompt: "Please Enter User Comment"
+      private: false
+  vars_files:
+    - ./vars/outside_vars.yml
+  tasks:
+    - name: Print a Variable Outside Block 1
+      ansible.builtin.debug:
+        msg: "{{ user_name }} // {{ user_comment }}"
+
+    - name: Create a Block
+      block:
+        - name: Print a Variable Inside Block
+          ansible.builtin.debug:
+            msg: "{{ user_name }} // {{ user_comment }}"
+
+        - name: Create a User {{ user_name }}
+          ansible.builtin.user:
+            name: "{{ user_name }}"
+            comment: "{{ user_comment }}"
+            shell: /bin/bash
+          become: true
+          vars:
+            user_comment: "Level 17 Task Vars"
+      vars:
+        user_comment: "Level 16 Block Vars"
+      #when: meme is defined
+      
+    - name: Print a Variable Outside Block 2
+      ansible.builtin.debug:
+        msg: "{{ user_name }} // {{ user_comment }}"
+  # vars_prompt is for developer level only

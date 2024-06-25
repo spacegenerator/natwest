@@ -1,0 +1,20 @@
+ansible-navigator:
+  ansible:
+    config:
+      help: false
+    inventory:
+      help: false
+  execution-environment:
+    container-engine: podman
+    enabled: true
+    image: utility.lab.example.com/ee-supported-rhel8:latest
+    pull:
+      policy: missing
+  logging:
+    append: true
+    file: /home/student/natwest/ansible-navigator.log
+  mode: stdout
+  playbook-artifact:
+    enable: false
+    ## FOr Interactive Input while Playbook run, enable must be false
+      #save-as: /tmp

@@ -1,0 +1,21 @@
+- name: Convert Ad-Hoc Command to Playbook
+  hosts:
+    - servera*
+    - serverb*
+    - serverc*
+  tasks:
+    - name: Read Bottom 4 lines
+      ansible.builtin.command: tail -n 4 /etc/passwd
+      # This Module doesn't support Check Mode
+
+    - name: Create a file in tmp folder
+      ansible.builtin.copy:
+        content: "HELLO Ashley Glenn Joel"
+        dest: /tmp/meme
+        mode: 0644
+
+    - name: Ping the Host
+      ansible.builtin.ping:
+
+## - is list of tasks/servers
+## hosts: servera*,serverb*

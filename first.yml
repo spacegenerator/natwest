@@ -1,0 +1,21 @@
+- name: Convert Ad-Hoc Command to Playbook
+  hosts: servera*
+  # remote_user: devops
+  become: false
+  tasks:
+    - name: Install Python if Not installed
+      ansible.builtin.raw:  dnf install -y python3
+
+    - name: Read 4 lines
+      ansible.builtin.command: head -4 /etc/passwd
+
+    - name: Create a file in tmp folder
+      copy:
+        content: "HELLO Ashley"
+        dest: /tmp/meme
+
+    - name: Install Web Server
+      yum:
+        name: httpd
+        state: latest
+      become: true

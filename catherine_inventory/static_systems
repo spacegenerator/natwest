@@ -1,0 +1,27 @@
+## Inventory INI Format ##
+
+workstation.lab.example.com
+
+[all:vars]
+user_name="aidan"
+user_comment="Level 3 from Static Inventory File"
+
+[dev]
+servera.lab.example.com
+serverb.lab.example.com user_comment="Level 8 Static Inventory File SERVER_B"
+
+[spain]
+serverc.lab.example.com
+
+[london]
+serverd.lab.example.com
+172.25.250.12
+
+[range]
+192.168.[1:4].[5:8]
+# Server_[A:F].example.com
+# Server[1:5].example.com
+
+[big_group:children]
+dev
+london

@@ -1,0 +1,44 @@
+- name: Setup Web Server Configuration Play
+  hosts: servera*
+  become: true
+  remote_user: devops
+  gather_facts: false
+  tasks:
+    - name: Open Firewall Port
+      ansible.posix.firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: true
+
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+      # ansible.builtin.dnf: name=httpd state=latest
+
+    - name: Deploy my Application
+      ansible.builtin.copy:
+        content: "This is Index Page \n"
+        dest: /var/www/html/index.html
+        mode: 0644
+
+    - name: Start Web Service
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+
+- name: Test Web Server from Client Machine
+  hosts: workstation*
+  become: false
+  remote_user: student
+  gather_facts: false
+  tasks:
+    - name: Curl the App Page
+      ansible.builtin.uri:
+        url: http://servera.lab.example.com
+        return_content: true
+
+    - name: Ping the Host
+      ansible.builtin.ping:
