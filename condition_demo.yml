@@ -1,0 +1,43 @@
+- name: Condition with Facts Demo
+  hosts: servera*
+  # gather_facts: false
+  vars_files:
+    - vars/outside_vars.yml
+  tasks:
+    - name: Print the Facts 1
+      ansible.builtin.copy:
+        dest: /tmp/system
+        content: |
+              Arch  = {{ ansible_facts['architecture'] }}
+              Time  = {{ ansible_date_time['date'] }}
+              Hour  = {{ ansible_date_time['time'] }}
+              IP    = {{ ansible_default_ipv4.address }}
+              OS    = {{ ansible_facts['distribution'] }}
+              FQDN  = {{ ansible_facts['fqdn'] }}
+              Host  = {{ ansible_hostname }}
+              Free  = {{ ansible_memory_mb.real.free }}
+              manager = {{ ansible_local['emp']['dept_info']['dept_manager'] | default('NA') }}
+              Dept Name = {{ ansible_local['emp']['dept_info']['dept_name'] | default('NA') }}
+
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+      register: captured
+      become: true
+
+    - name: Restart Web Service
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+      when:
+        - ansible_memory_mb.real.free > 400
+        - ansible_facts['distribution'] in os
+        # - ansible_facts['distribution'] == "RedHat"
+        - ansible_local['emp']['dept_info']['dept_name'] == 'finance'
+        - captured.changed or ansible_facts['architecture'] == "x86_64"
+        - some_var is not defined
+      become: true
+
+      # List of Condition is AND operator by default
+      # when: ansible_memory_mb.real.free > 400 and  ansible_facts['distribution'] == "RedHat" and ansible_local['emp']['dept_info']['dept_name'] == 'finance' and inventory_hostname in groups["dev"]

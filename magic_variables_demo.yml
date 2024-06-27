@@ -1,0 +1,9 @@
+- name: Magic Variable Demo
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Print Magic Variable First
+      ansible.builtin.debug:
+        msg: "Hello I Am {{ inventory_hostname }} "
+      when: inventory_hostname in groups["london"]
+      # when: inventory_hostname == "serverc.lab.example.com"

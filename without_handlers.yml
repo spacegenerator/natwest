@@ -1,0 +1,25 @@
+- name: Without Handler Register / Dependency Task Play
+  hosts: servera*
+  become: true
+  remote_user: devops
+  gather_facts: false
+  tasks:
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+      register: ganesh_output
+
+    - name: Print Install Task Output
+      ansible.builtin.debug:
+        msg: "{{ ganesh_output }}"
+
+
+    - name: Restart Web Service
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+      when: ganesh_output.changed
+
+    # when comparing changed from register variable , better use handlers
+    # for any other parameter from register vaiable, continue using register

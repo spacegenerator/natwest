@@ -1,1 +1,28 @@
 user_comment: "Level 14 play External File"
+users:
+  bjones:
+    first_name: Bob
+    last_name: Jones
+    home_dir: /users/bjones
+  acook:
+    first_name: Anne
+    last_name: Cook
+    home_dir: /users/acook
+
+simple_list:
+  - akram
+  - joey
+
+complex_list:
+  - user_name: akram
+    user_comment: Akram Badamchi
+  - user_name: joey
+    user_comment: Joey Jongeneel
+user_dict:
+  akram: Akram Badamchi
+  joey: Joey Jongeneel
+
+os:
+  - RedHat
+  - Fedora
+  - Ubuntu

@@ -1,0 +1,43 @@
+- name: With Handlers Demo/ Dependency Task Play
+  hosts: servera*
+  become: true
+  remote_user: devops
+  gather_facts: false
+  tasks:
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+      notify:
+        - Restart Web Service
+        - Web Package Installed
+
+    - name: Deploy my Application
+      ansible.builtin.copy:
+        content: "This is Index Page  Handlers\n"
+        dest: /var/www/html/index.html
+        mode: 0644
+      notify:
+        - App Deployed
+        - Restart Web Service
+
+
+  handlers:
+    - name: Stupid Handlers
+      ansible.builtin.debug:
+        msg: "No One called ME"
+
+    - name: App Deployed
+      ansible.builtin.debug:
+        msg: "Application Deployed"
+
+    - name: Web Package Installed
+      ansible.builtin.debug:
+        msg: "Web Package Installed"
+
+    - name: Restart Web Service
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+
+  # Handlers run in the order it is defined not in the order it is Notified After ALL TASKS COMPLETED SUCCESFULLy

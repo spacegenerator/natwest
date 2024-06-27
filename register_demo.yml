@@ -1,0 +1,32 @@
+- name: Register Demo/ Dependency Task Play
+  hosts: servera*
+  become: true
+  remote_user: devops
+  gather_facts: false
+  tasks:
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+      register: ganesh_output
+
+    - name: Print Install Task Output
+      ansible.builtin.debug:
+        msg: "{{ ganesh_output }}"
+
+    - name: Deploy my Application
+      ansible.builtin.copy:
+        content: "This is Index Page  \n"
+        dest: /var/www/html/index.html
+        mode: 0644
+      register: edward_output
+
+    - name: Print APP Task Output
+      ansible.builtin.debug:
+        msg: "{{ edward_output }}"
+
+    - name: Restart Web Service
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+      when: ganesh_output.changed == false  or edward_output.changed  == false

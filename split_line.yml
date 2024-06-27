@@ -1,0 +1,27 @@
+- name: Split Line Demo
+  hosts: servera*
+  gather_facts: false
+
+  tasks:
+    - name: Print the Line 1
+      ansible.builtin.copy:
+          content: "Hello How r u very long line i want to figure out how to handle this long stuff"
+          dest: /tmp/file1
+
+    - name: Print the Line 2
+      ansible.builtin.copy:
+          content: >
+                Hello How r u
+                very long line
+                i want to figure out how to handle this
+                long stuff
+          dest: /tmp/file2
+
+    - name: Print the Line 3
+      ansible.builtin.copy:
+          content: |
+                Hello How r u
+                very long line
+                i want to figure out how to handle this
+                long stuff
+          dest: /tmp/file3

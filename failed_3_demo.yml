@@ -1,0 +1,38 @@
+- name: Handle failure/Not Expected Output in ways Play
+  hosts: servera*
+  become: true
+  remote_user: devops
+  gather_facts: false
+  tasks:
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        name: httpd
+        state: latest
+      register: captured
+      # failed_when: captured.changed == false
+      
+    # - name: Stop the Playbook with fail module
+    #   ansible.builtin.fail:
+    #     msg: "Nothing got Updated so check repo"
+    #   when: captured.changed == false
+
+    - name: Stop/Continue Playbook with assert module
+      ansible.builtin.assert:
+        that:
+          - captured.changed == true
+          - meme_var is not defined
+        fail_msg: "Nothing Updated Check Repository"
+        success_msg: "Huuray Package Updated"
+
+    - name: Deploy my Application
+      ansible.builtin.copy:
+        content: "This is Index Page \n"
+        dest: /var/www/html/index.html
+        mode: 0644
+
+    - name: Start Web Service
+      ansible.builtin.service:
+        name: httpd
+        state: started
+
+

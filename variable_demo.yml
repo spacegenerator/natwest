@@ -10,9 +10,21 @@
   vars_files:
     - ./vars/outside_vars.yml
   tasks:
+    - name: Set the variable as a FACT
+      ansible.builtin.set_fact:
+        user_comment: "Level 19 play Set Fact"
+
+    - name: Include a Vars File
+      ansible.builtin.include_vars: vars/extra_vars.yml
+      when: youme is not defined
+
     - name: Print a Variable Outside Block 1
       ansible.builtin.debug:
         msg: "{{ user_name }} // {{ user_comment }}"
+
+    - name: Dict Variables
+      ansible.builtin.debug:
+        msg: "{{ users.bjones.home_dir }} // {{ users['acook']['first_name'] }}"
 
     - name: Create a Block
       block:
@@ -36,3 +48,4 @@
       ansible.builtin.debug:
         msg: "{{ user_name }} // {{ user_comment }}"
   # vars_prompt is for developer level only
+  # ansible-navigator run variable_demo.yml  -e 'user_comment="Level 22 Command Line GOD LEVEL"'

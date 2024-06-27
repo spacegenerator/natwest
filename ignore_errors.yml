@@ -1,0 +1,33 @@
+- name: Ignore Errors Play
+  hosts: servera*
+  become: true
+  remote_user: devops
+  gather_facts: false
+  # ignore_errors: true
+  tasks:
+    - name: Open Firewall Port
+      ansible.posix.firewalld:
+        service: httpppp
+        permanent: true
+        state: enabled
+        immediate: true
+        # Only Options of Module right indent to Module
+        # ansible-navigator doc ansible.posix.firewalld
+      ignore_errors: true
+
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        name: httpddddd
+        state: present
+      # ansible.builtin.dnf: name=httpd state=latest
+
+    - name: Deploy my Application
+      ansible.builtin.copy:
+        content: "This is Index Page \n"
+        dest: /var/wwwWW/html/index.html
+        mode: 0644
+
+    - name: Start Web Service
+      ansible.builtin.service:
+        name: httpdddddd
+        state: started

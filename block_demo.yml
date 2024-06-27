@@ -1,0 +1,53 @@
+- name: Block Demo
+  hosts: servera*
+  gather_facts: true
+
+  tasks:
+    - name: Print a Variable Outside Block 1
+      ansible.builtin.debug:
+        msg: "{{ user_name }} // {{ user_comment }}"
+
+    - name: Block tasks for Web Server
+      block:
+        - name: Install Web Server
+          ansible.builtin.dnf:
+            name: httpd
+            state: present
+
+        - name: Deploy my Application
+          ansible.builtin.copy:
+            content: "This is Index Page  \n"
+            dest: /var/wwwWWW/html/index.html
+            mode: 0644
+
+        - name: Restart Web Service
+          ansible.builtin.service:
+            name: httpd
+            state: restarted
+      when:
+        - ansible_memory_mb.real.free > 350
+        - ansible_facts['distribution'] == "RedHat"
+      become: true
+      rescue:
+        - name: Undo Starts
+          ansible.builtin.debug:
+            msg: "Bring System to Last Good Last Known COnfiguration"
+
+        - name: Remove  my Application
+          ansible.builtin.file:
+            path: /var/www/html/index.html
+            state: absent
+        - name: Uninstall Web Server
+          ansible.builtin.dnf:
+            name: httpd
+            state: absent
+            autoremove: true
+      always:
+        - name: Inform the Client
+          ansible.builtin.debug:
+            msg: "Email Send to Client"
+
+
+    - name: Print a Variable Outside Block 2
+      ansible.builtin.debug:
+        msg: "{{ user_name }} // {{ user_comment }}"

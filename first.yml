@@ -5,6 +5,7 @@
   tasks:
     - name: Install Python if Not installed
       ansible.builtin.raw:  dnf install -y python3
+      become: true
 
     - name: Read 4 lines
       ansible.builtin.command: head -4 /etc/passwd

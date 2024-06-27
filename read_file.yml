@@ -1,0 +1,9 @@
+- name: Read the file
+  hosts: servera*
+  gather_facts: false
+  tasks:
+    - name: Read passwd file
+      ansible.builtin.debug:
+        msg: "{{ item }}"
+      when: item.find('games') != -1
+      loop: "{{ query('lines','cat /etc/passwd') }}"

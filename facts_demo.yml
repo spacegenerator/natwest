@@ -1,0 +1,55 @@
+- name: Facts Demo
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Collect Limited Facts
+      ansible.builtin.setup:
+        gather_subset:
+          - 'all'
+          # - '!hardware'
+          # - interfaces
+          # - '!all'
+      when: inventory_hostname in groups["dev"]
+
+    - name: Print the Facts 1
+      ansible.builtin.copy:
+        dest: /tmp/system
+        content: |
+              IH    = {{ inventory_hostname }}
+              Members = {{ groups["dev"] }}
+              My Groups = {{ group_names }}
+              Arch  = {{ ansible_architecture }}
+              Arch  = {{ ansible_facts['architecture'] }}
+              Arch  = {{ ansible_facts.architecture }}
+              Time  = {{ ansible_date_time['date'] }}
+              Hour  = {{ ansible_date_time['time'] }}
+              IP    = {{ ansible_default_ipv4.address }}
+              Dev A = {{ ansible_facts['devices']['vda']['size'] }}
+              OS    = {{ ansible_facts['distribution'] }}
+              FQDN  = {{ ansible_facts['fqdn'] }}
+              Host  = {{ ansible_hostname }}
+              Kernel= {{ ansible_facts['kernel'] }}
+              Free  = {{ ansible_memory_mb.real.free }}
+              manager = {{ ansible_local['emp']['dept_info']['dept_manager'] | default('Not Defined') }}
+              Location = {{ ansible_local['emp']['emp_info']['emp_location'] | default('Not Defined')}}
+              Dept Name = {{ ansible_local['emp']['dept_info']['dept_name'] | default('Not Applicable') }}
+      when: inventory_hostname in groups["dev"]
+
+    - name: Block for Web Server Tasks
+      block:
+        - name: Install Web Server
+          ansible.builtin.dnf:
+            name: httpd
+            state: present
+        - name: Deploy my Application
+          ansible.builtin.copy:
+            content: "This is Index Page  \n"
+            dest: /var/www/html/index.html
+            mode: 0644
+        - name: Restart Web Service
+          ansible.builtin.service:
+            name: httpd
+            state: restarted
+      when: ansible_memory_mb.real.free > 400 and  ansible_facts['distribution'] == "RedHat" and ansible_local['emp']['dept_info']['dept_name'] == 'finance' and inventory_hostname in groups["dev"]
+      become: true

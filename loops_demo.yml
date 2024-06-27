@@ -1,0 +1,64 @@
+- name: Loops Demo
+  hosts: servera*
+  gather_facts: false
+  vars_files:
+    - vars/outside_vars.yml
+
+  tasks:
+    - name: Print a Simple List
+      ansible.builtin.debug:
+        msg: "{{ item }}" 
+      loop: "{{ simple_list }}"
+
+    - name: Print a Complex List
+      ansible.builtin.debug:
+        msg: "{{ item['user_name'] }} ++ {{ item.user_comment }}"
+      loop: "{{ complex_list }}"
+
+    - name: Create Users Via Complex List
+      ansible.builtin.user:
+        name: "{{ item['user_name'] }}"
+        comment: "{{ item.user_comment }}"
+      with_list: "{{ complex_list }}"
+      become: true
+      # with_items: "{{ complex_list }}"
+      # loop: "{{ complex_list }}"
+      # Loop from 2.5
+      #
+
+    - name: Print a Dict Variable
+      ansible.builtin.debug:
+        msg: "{{ item.key }} == {{ item.value }}"
+      with_dict: "{{ user_dict }}"
+
+    - name: Create Users Via Dict
+      ansible.builtin.user:
+        name: "{{ item['key'] }}"
+        comment: "{{ item.value }}"
+      with_dict: "{{ user_dict }}"
+      become: true
+
+    - name: Print a Sequence of NIC
+      ansible.builtin.debug:
+        msg: "{{ item }}"
+      with_sequence: start=0 end=6 format=eth%x
+      when: item != "eth2"
+
+    - name: Execute few commands
+      ansible.builtin.command: "{{ item }}"
+      loop:
+        - hostname
+        - systemctl status firewalld
+        - pwd
+        - uptime
+      register: captured
+
+    - name: Print Specfic Item
+      ansible.builtin.debug:
+        msg: "{{ captured['results'][2]['stdout_lines'][0] }}"
+    
+    - name: Print cap output
+      ansible.builtin.debug:
+        msg: "{{ item.stdout }} // {{ item.cmd }}"
+      loop: "{{ captured['results'] }}"
+

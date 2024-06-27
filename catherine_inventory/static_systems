@@ -17,8 +17,8 @@ serverc.lab.example.com
 serverd.lab.example.com
 172.25.250.12
 
-[range]
-192.168.[1:4].[5:8]
+# [range]
+# 192.168.[1:4].[5:8]
 # Server_[A:F].example.com
 # Server[1:5].example.com
 
