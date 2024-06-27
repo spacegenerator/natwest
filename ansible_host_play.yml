@@ -1,0 +1,7 @@
+- name: Change Name of Host
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name:  Basic Task
+      ansible.builtin.debug:
+        msg: "Hello I am {{ inventory_hostname }}"

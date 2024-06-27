@@ -10,10 +10,12 @@ serverb.lab.example.com user_comment="Level 8 Static Inventory File SERVER_B"
 
 [spain]
 serverc.lab.example.com
+# Spain_web_Server ansible_host=serverc.lab.example.com
 
 [london]
 serverd.lab.example.com
 172.25.250.12
+# London_ftp_server ansible_host=172.25.250.12
 
 [big_group:children]
 dev

@@ -1,0 +1,17 @@
+## Just a Task file ( NOT Playbook ) for Oracle Tasks ##
+
+- name: Oracle Install Task 1
+  ansible.builtin.debug:
+    msg: "Task 1 for Oracle Setup"
+
+- name: Oracle Install Task 2
+  ansible.builtin.debug:
+    msg: "Task 2 for Oracle Setup"
+
+- name: Oracle Install Task 3
+  ansible.builtin.debug:
+    msg: "Task 3 for Oracle Setup"
+
+- name: Oracle Install Task 4
+  ansible.builtin.debug:
+    msg: "Task 4 for Oracle Setup"

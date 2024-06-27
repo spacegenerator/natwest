@@ -1,0 +1,11 @@
+- name: Active Directory Install Task 1
+  ansible.builtin.command: sleep 2
+
+- name: Active Directory Install Task 2
+  ansible.builtin.command: sleep 2
+
+- name: Active Directory Install Task 3
+  ansible.builtin.command: sleep 2
+
+- name: Active Directory Install Task 4
+  ansible.builtin.command: sleep 2

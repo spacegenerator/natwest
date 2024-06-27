@@ -1,0 +1,50 @@
+- name: Import Variable Playbook
+  ansible.builtin.import_playbook: variable_demo.yml
+
+- name: Very Large Playbook
+  hosts: servera*
+  gather_facts: false
+  tasks:
+  # import is at Development Level #
+    - name: Import an External Task File
+      ansible.builtin.import_tasks: tasks/external_oracle.yml
+      # when: abc is defined
+
+    - name: Include an External Task File
+      ansible.builtin.include_tasks: tasks/external_AD.yml
+      # when: abc is defined
+      #
+    - name: Loop for Tasks Files
+      # ansible.builtin.import_tasks: "{{ item }}"
+      ansible.builtin.include_tasks: "{{ item }}"
+      loop:
+        - tasks/external_oracle.yml
+        - tasks/external_AD.yml
+
+- name: Import One More Playbook    
+  ansible.builtin.import_playbook: multiple_play.yml 
+
+# 
+#  Import (import_tasks, import_role)
+#  
+#  For Development Environment
+#  static inclusion of tasks(you know tasks in advance)
+#  --start-at-task can be used to start execution of playbook at certain point
+#  ansible-playbook abc.yml --syntax-check    ## also check syntax of imported Task file
+#  4  task in external file ## Condition checked on all task one by one although condition is false
+#  Might take more time
+#  Can not loop for importing files
+#  
+#  include (include_tasks, include_role)
+#  
+#  For Production Environment
+#  Dynamic inclusion of tasks(you DO NOT know tasks in advance)
+#  --start-at-task does n't work as task names are NOT known in advance
+#  ansible-playbook abc.yml --syntax-check    ## DOES NOT check syntax of included Task file
+#  4  task in external file ## Condition checked only once, if false file tasks are not included in execution of playbook
+#  Time efficient
+#  Can loop for including files
+#  
+#  import_playbook: playbook can only be imported NOT included
+#  
+#  
