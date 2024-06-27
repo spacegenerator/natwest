@@ -1,0 +1,9 @@
+[emp_info]
+emp_name = teodor
+emp_id = 1929
+emp_location = london
+
+[dept_info]
+dept_name = finance
+dept_id = 222
+dept_manager = Catherine Wallace

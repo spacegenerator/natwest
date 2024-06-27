@@ -1,0 +1,19 @@
+
+
+## System Information for {{ inventory_hostname }} ##
+IH    		= {{ inventory_hostname }}
+My Groups 	= {{ group_names }}
+Arch  		= {{ ansible_facts['architecture'] }}
+Arch  		= {{ ansible_facts.architecture }}
+Time  		= {{ ansible_date_time['date'] }}
+Hour  		= {{ ansible_date_time['time'] }}
+IP    		= {{ ansible_default_ipv4.address }}
+Dev A 		= {{ ansible_facts['devices']['vda']['size'] }}
+OS    		= {{ ansible_facts['distribution'] }}
+FQDN  		= {{ ansible_facts['fqdn'] }}
+Host  		= {{ ansible_hostname }}
+Kernel		= {{ ansible_facts['kernel'] }}
+Free  		= {{ ansible_memory_mb.real.free }}
+manager 	= {{ ansible_local['emp']['dept_info']['dept_manager'] | default('Not Defined') }}
+Location 	= {{ ansible_local['emp']['emp_info']['emp_location'] | default('Not Defined')}}
+Dept Name 	= {{ ansible_local['emp']['dept_info']['dept_name'] | default('Not Applicable') }}

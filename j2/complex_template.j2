@@ -1,0 +1,47 @@
+{% for sys in groups["control"] %}
+## Control Node Information for {{ hostvars[sys].inventory_hostname }} ##
+
+System Name	= {{ sys }}
+Inventory Host	= {{ hostvars[sys].inventory_hostname }}
+FQDN  		= {{ hostvars[sys].ansible_facts['fqdn'] }}
+Host  		= {{ hostvars[sys].ansible_hostname }}
+My Groups 	= {{ hostvars[sys].group_names }}
+Arch  		= {{ hostvars[sys].ansible_facts['architecture'] }}
+Arch  		= {{ hostvars[sys].ansible_facts.architecture }}
+Time  		= {{ hostvars[sys].ansible_date_time['date'] }}
+Hour  		= {{ hostvars[sys].ansible_date_time['time'] }}
+IP    		= {{ hostvars[sys].ansible_default_ipv4.address }}
+Dev A 		= {{ hostvars[sys].ansible_facts['devices']['vda']['size'] }}
+OS    		= {{ hostvars[sys].ansible_facts['distribution'] }}
+Kernel		= {{ hostvars[sys].ansible_facts['kernel'] }}
+Free  		= {{ hostvars[sys].ansible_memory_mb.real.free }}
+manager 	= {{ hostvars[sys].ansible_local['emp']['dept_info']['dept_manager'] | default('Not Defined') }}
+Location 	= {{ hostvars[sys].ansible_local['emp']['emp_info']['emp_location'] | default('Not Defined')}}
+Dept Name 	= {{ hostvars[sys].ansible_local['emp']['dept_info']['dept_name'] | default('Not Applicable') }}
+
+{% endfor %}
+
+
+{% for sys in groups["all"] %}
+{% if sys not in groups["control"] %}
+## Managed Host Information for {{ hostvars[sys].inventory_hostname }} ##
+System Name	= {{ sys }}
+Inventory Host	= {{ hostvars[sys].inventory_hostname }}
+FQDN  		= {{ hostvars[sys].ansible_facts['fqdn'] }}
+Host  		= {{ hostvars[sys].ansible_hostname }}
+My Groups 	= {{ hostvars[sys].group_names }}
+Arch  		= {{ hostvars[sys].ansible_facts['architecture'] }}
+Arch  		= {{ hostvars[sys].ansible_facts.architecture }}
+Time  		= {{ hostvars[sys].ansible_date_time['date'] }}
+Hour  		= {{ hostvars[sys].ansible_date_time['time'] }}
+IP    		= {{ hostvars[sys].ansible_default_ipv4.address }}
+Dev A 		= {{ hostvars[sys].ansible_facts['devices']['vda']['size'] }}
+OS    		= {{ hostvars[sys].ansible_facts['distribution'] }}
+Kernel		= {{ hostvars[sys].ansible_facts['kernel'] }}
+Free  		= {{ hostvars[sys].ansible_memory_mb.real.free }}
+manager 	= {{ hostvars[sys].ansible_local['emp']['dept_info']['dept_manager'] | default('Not Defined') }}
+Location 	= {{ hostvars[sys].ansible_local['emp']['emp_info']['emp_location'] | default('Not Defined')}}
+Dept Name 	= {{ hostvars[sys].ansible_local['emp']['dept_info']['dept_name'] | default('Not Applicable') }}
+
+{% endif %}
+{% endfor %}

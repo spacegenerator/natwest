@@ -1,10 +1,8 @@
 ## Inventory INI Format ##
 
+[control]
 workstation.lab.example.com
 
-[all:vars]
-user_name="aidan"
-user_comment="Level 3 from Static Inventory File"
 
 [dev]
 servera.lab.example.com
@@ -17,11 +15,15 @@ serverc.lab.example.com
 serverd.lab.example.com
 172.25.250.12
 
+[big_group:children]
+dev
+london
+
+[all:vars]
+user_name="aidan"
+user_comment="Level 3 from Static Inventory File"
+
 # [range]
 # 192.168.[1:4].[5:8]
 # Server_[A:F].example.com
 # Server[1:5].example.com
-
-[big_group:children]
-dev
-london
