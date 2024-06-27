@@ -8,34 +8,34 @@
     #     src: j2/simple_template.j2
     #     dest: /tmp/info.txt
 
-    # - name: Collect Information Complex Template
-    #   ansible.builtin.template:
-    #     src: j2/complex_template.j2
-    #     dest: /tmp/info.txt
-    #   when: inventory_hostname in groups["control"]
-    #
-    - name: Open Firewall Port
-      ansible.posix.firewalld:
-        service: http
-        permanent: true
-        state: enabled
-        immediate: true
-       
-    - name: Install Web Server
-      ansible.builtin.dnf:
-        name: httpd
-        state: present
-      # ansible.builtin.dnf: name=httpd state=latest
-       
-    - name: Deploy my Application
+    - name: Collect Information Complex Template
       ansible.builtin.template:
-        src: j2/info_template.j2
-        dest: /var/www/html/index.html
-        mode: 0644
-       
-    - name: Start Web Service
-      ansible.builtin.service:
-        name: httpd
-        state: started
+        src: j2/complex_template.j2
+        dest: /tmp/info.txt
+      when: inventory_hostname in groups["control"]
+    #
+    # - name: Open Firewall Port
+    #   ansible.posix.firewalld:
+    #     service: http
+    #     permanent: true
+    #     state: enabled
+    #     immediate: true
+    #    
+    # - name: Install Web Server
+    #   ansible.builtin.dnf:
+    #     name: httpd
+    #     state: present
+    #   # ansible.builtin.dnf: name=httpd state=latest
+    #    
+    # - name: Deploy my Application
+    #   ansible.builtin.template:
+    #     src: j2/info_template.j2
+    #     dest: /var/www/html/index.html
+    #     mode: 0644
+    #    
+    # - name: Start Web Service
+    #   ansible.builtin.service:
+    #     name: httpd
+    #     state: started
        
 

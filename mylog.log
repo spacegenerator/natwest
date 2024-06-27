@@ -1,0 +1,547 @@
+2024-06-27 09:15:23,934 p=74199 u=student n=ansible | ERROR! couldn't resolve module/action 'ansible.posix.firewalld'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/home/student/natwest/multiple_play.yml': line 7, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - name: Open Firewall Port
+      ^ here
+
+2024-06-27 09:15:33,564 p=74208 u=student n=ansible | ERROR! the playbook: var could not be found
+2024-06-27 09:15:40,573 p=74212 u=student n=ansible | PLAY [Variable Demo as User Creation] ******************************************
+2024-06-27 09:15:40,594 p=74212 u=student n=ansible | TASK [Set the variable as a FACT] **********************************************
+2024-06-27 09:15:40,628 p=74212 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-27 09:15:40,629 p=74212 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-06-27 09:15:40,631 p=74212 u=student n=ansible | ok: [serverc.lab.example.com]
+2024-06-27 09:15:40,646 p=74212 u=student n=ansible | TASK [Include a Vars File] *****************************************************
+2024-06-27 09:15:40,679 p=74212 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-27 09:15:40,696 p=74212 u=student n=ansible | ok: [serverc.lab.example.com]
+2024-06-27 09:15:40,703 p=74212 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-06-27 09:15:40,716 p=74212 u=student n=ansible | TASK [Print a Variable Outside Block 1] ****************************************
+2024-06-27 09:15:40,744 p=74212 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:40,757 p=74212 u=student n=ansible | ok: [serverb.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:40,758 p=74212 u=student n=ansible | ok: [serverc.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:40,763 p=74212 u=student n=ansible | TASK [Dict Variables] **********************************************************
+2024-06-27 09:15:40,803 p=74212 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "/users/bjones // Anne"
+}
+2024-06-27 09:15:40,803 p=74212 u=student n=ansible | ok: [serverb.lab.example.com] => {
+    "msg": "/users/bjones // Anne"
+}
+2024-06-27 09:15:40,817 p=74212 u=student n=ansible | ok: [serverc.lab.example.com] => {
+    "msg": "/users/bjones // Anne"
+}
+2024-06-27 09:15:40,825 p=74212 u=student n=ansible | TASK [Print a Variable Inside Block] *******************************************
+2024-06-27 09:15:40,863 p=74212 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:40,866 p=74212 u=student n=ansible | ok: [serverb.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:40,878 p=74212 u=student n=ansible | ok: [serverc.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:40,886 p=74212 u=student n=ansible | TASK [Create a User aidan] *****************************************************
+2024-06-27 09:15:42,158 p=74212 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-06-27 09:15:42,186 p=74212 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-27 09:15:42,188 p=74212 u=student n=ansible | ok: [serverc.lab.example.com]
+2024-06-27 09:15:42,197 p=74212 u=student n=ansible | TASK [Print a Variable Outside Block 2] ****************************************
+2024-06-27 09:15:42,228 p=74212 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:42,230 p=74212 u=student n=ansible | ok: [serverb.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:42,237 p=74212 u=student n=ansible | ok: [serverc.lab.example.com] => {
+    "msg": "aidan // Level 19 play Set Fact"
+}
+2024-06-27 09:15:42,247 p=74212 u=student n=ansible | PLAY RECAP *********************************************************************
+2024-06-27 09:15:42,247 p=74212 u=student n=ansible | servera.lab.example.com    : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 09:15:42,247 p=74212 u=student n=ansible | serverb.lab.example.com    : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 09:15:42,247 p=74212 u=student n=ansible | serverc.lab.example.com    : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:17:50,523 p=16 u=root n=ansible | {"/usr/share/ansible/collections/ansible_collections": {"amazon.aws": {"version": "3.2.0"}, "ansible.controller": {"version": "4.2.1"}, "ansible.netcommon": {"version": "3.0.0"}, "ansible.network": {"version": "1.2.0"}, "ansible.posix": {"version": "1.3.0"}, "ansible.security": {"version": "1.0.0"}, "ansible.utils": {"version": "2.6.1"}, "ansible.windows": {"version": "1.9.0"}, "ansible.yang": {"version": "1.0.0"}, "arista.eos": {"version": "5.0.0"}, "cisco.asa": {"version": "3.0.0"}, "cisco.ios": {"version": "3.0.0"}, "cisco.iosxr": {"version": "3.0.0"}, "cisco.nxos": {"version": "3.0.0"}, "cloud.common": {"version": "2.1.1"}, "frr.frr": {"version": "2.0.0"}, "ibm.qradar": {"version": "2.0.0"}, "junipernetworks.junos": {"version": "3.0.0"}, "kubernetes.core": {"version": "2.2.3"}, "openvswitch.openvswitch": {"version": "2.1.0"}, "redhat.insights": {"version": "1.0.7"}, "redhat.openshift": {"version": "2.1.0"}, "redhat.rhv": {"version": "1.6.5"}, "redhat.satellite": {"version": "3.3.0"}, "servicenow.itsm": {"version": "1.3.3"}, "splunk.es": {"version": "2.0.0"}, "trendmicro.deepsec": {"version": "2.0.0"}, "vmware.vmware_rest": {"version": "2.1.5"}, "vyos.vyos": {"version": "3.0.0"}}}
+2024-06-27 13:17:51,677 p=21 u=root n=ansible | ansible-playbook [core 2.13.3]
+  config file = /home/student/natwest/ansible.cfg
+  configured module search path = ['/home/runner/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.9/site-packages/ansible
+  ansible collection location = /home/runner/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.9.7 (default, Sep 13 2021, 08:18:39) [GCC 8.5.0 20210514 (Red Hat 8.5.0-3)]
+  jinja version = 3.0.3
+  libyaml = True
+2024-06-27 13:17:51,677 p=21 u=root n=ansible | Using /home/student/natwest/ansible.cfg as config file
+2024-06-27 13:17:51,687 p=21 u=root n=ansible | host_list declined parsing /home/student/natwest/catherine_inventory/ad.py as it did not pass its verify_file() method
+2024-06-27 13:17:51,701 p=21 u=root n=ansible | auto declined parsing /home/student/natwest/catherine_inventory/ad.py as it did not pass its verify_file() method
+2024-06-27 13:17:51,702 p=21 u=root n=ansible | yaml declined parsing /home/student/natwest/catherine_inventory/ad.py as it did not pass its verify_file() method
+2024-06-27 13:17:51,703 p=21 u=root n=ansible | Parsed /home/student/natwest/catherine_inventory/ad.py inventory source with ini plugin
+2024-06-27 13:17:51,706 p=21 u=root n=ansible | host_list declined parsing /home/student/natwest/catherine_inventory/static_systems as it did not pass its verify_file() method
+2024-06-27 13:17:51,706 p=21 u=root n=ansible | script declined parsing /home/student/natwest/catherine_inventory/static_systems as it did not pass its verify_file() method
+2024-06-27 13:17:51,706 p=21 u=root n=ansible | auto declined parsing /home/student/natwest/catherine_inventory/static_systems as it did not pass its verify_file() method
+2024-06-27 13:17:51,709 p=21 u=root n=ansible | Parsed /home/student/natwest/catherine_inventory/static_systems inventory source with ini plugin
+2024-06-27 13:17:51,711 p=21 u=root n=ansible | host_list declined parsing /home/student/natwest/catherine_inventory/vmware.py as it did not pass its verify_file() method
+2024-06-27 13:17:51,720 p=21 u=root n=ansible | auto declined parsing /home/student/natwest/catherine_inventory/vmware.py as it did not pass its verify_file() method
+2024-06-27 13:17:51,721 p=21 u=root n=ansible | yaml declined parsing /home/student/natwest/catherine_inventory/vmware.py as it did not pass its verify_file() method
+2024-06-27 13:17:51,721 p=21 u=root n=ansible | Parsed /home/student/natwest/catherine_inventory/vmware.py inventory source with ini plugin
+2024-06-27 13:17:51,951 p=21 u=root n=ansible | Skipping callback 'awx_display', as we already have a stdout callback.
+2024-06-27 13:17:51,954 p=21 u=root n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2024-06-27 13:17:51,954 p=21 u=root n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-06-27 13:17:51,955 p=21 u=root n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-06-27 13:17:51,955 p=21 u=root n=ansible | PLAYBOOK: first.yml ************************************************************
+2024-06-27 13:17:51,956 p=21 u=root n=ansible | 1 plays in /home/student/natwest/first.yml
+2024-06-27 13:17:51,958 p=21 u=root n=ansible | PLAY [Convert Ad-Hoc Command to Playbook] **************************************
+2024-06-27 13:17:51,976 p=21 u=root n=ansible | TASK [Gathering Facts] *********************************************************
+2024-06-27 13:17:52,013 p=27 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:52,015 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2024-06-27 13:17:52,321 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'/root\n', b'')
+2024-06-27 13:17:52,324 p=27 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:52,328 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614 `" && echo ansible-tmp-1719494272.323105-27-266394368876614="` echo /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614 `" ) && sleep 0'"'"''
+2024-06-27 13:17:52,369 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'ansible-tmp-1719494272.323105-27-266394368876614=/root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614\n', b'')
+2024-06-27 13:17:52,739 p=27 u=root n=ansible | <servera.lab.example.com> Attempting python interpreter discovery
+2024-06-27 13:17:52,740 p=27 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:52,741 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.8'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+2024-06-27 13:17:52,790 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3.9\n/usr/bin/python3\n/usr/libexec/platform-python\n/usr/bin/python\n/usr/bin/python\nENDFOUND\n', b'')
+2024-06-27 13:17:52,795 p=27 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:52,798 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'/usr/bin/python3.9 && sleep 0'"'"''
+2024-06-27 13:17:52,867 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"Red Hat Enterprise Linux\\"\\nVERSION=\\"9.0 (Plow)\\"\\nID=\\"rhel\\"\\nID_LIKE=\\"fedora\\"\\nVERSION_ID=\\"9.0\\"\\nPLATFORM_ID=\\"platform:el9\\"\\nPRETTY_NAME=\\"Red Hat Enterprise Linux 9.0 (Plow)\\"\\nANSI_COLOR=\\"0;31\\"\\nLOGO=\\"fedora-logo-icon\\"\\nCPE_NAME=\\"cpe:/o:redhat:enterprise_linux:9::baseos\\"\\nHOME_URL=\\"https://www.redhat.com/\\"\\nDOCUMENTATION_URL=\\"https://access.redhat.com/documentation/red_hat_enterprise_linux/9/\\"\\nBUG_REPORT_URL=\\"https://bugzilla.redhat.com/\\"\\n\\nREDHAT_BUGZILLA_PRODUCT=\\"Red Hat Enterprise Linux 9\\"\\nREDHAT_BUGZILLA_PRODUCT_VERSION=9.0\\nREDHAT_SUPPORT_PRODUCT=\\"Red Hat Enterprise Linux\\"\\nREDHAT_SUPPORT_PRODUCT_VERSION=\\"9.0\\"\\n"}\n', b'')
+2024-06-27 13:17:52,872 p=27 u=root n=ansible | Using module file /usr/lib/python3.9/site-packages/ansible/modules/setup.py
+2024-06-27 13:17:52,873 p=27 u=root n=ansible | <servera.lab.example.com> PUT /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmp_x8ixxtt TO /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614/AnsiballZ_setup.py
+2024-06-27 13:17:52,874 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' '[servera.lab.example.com]'
+2024-06-27 13:17:52,960 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'sftp> put /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmp_x8ixxtt /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614/AnsiballZ_setup.py\n', b'')
+2024-06-27 13:17:52,963 p=27 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:52,966 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614/ /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614/AnsiballZ_setup.py && sleep 0'"'"''
+2024-06-27 13:17:53,014 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:53,016 p=27 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:53,018 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' -tt servera.lab.example.com '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614/AnsiballZ_setup.py && sleep 0'"'"''
+2024-06-27 13:17:53,726 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'\r\n{"ansible_facts": {"ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQC8WDOooY+rh6NPa9yhLsNQXBqcQknTL/WSd3zPvHLLd7KaC4IiEUxnwbfLBit8tRcirbQFxO20Am+6WJ2kpo34ZnlQYJz3AulZjuvat7x9DxzQ2duSwSUbLtqteMtl3vS7RPUZlSnGQKuPrkcLrWYZDQveC11efyBhyskjJYPXu7Csd3iA2EmtcNa10AUoK0f2XQC7R9wSb5D1md1JvaavQ107YFlzDHppRncWI51PwbyICaCVq7Kv4LdrcmQfsAyobPizWgp7u3Ui/Narxk7ev58tmBmI3nxnC6Fiec60zqhbWrnFI062kV9p+YWHOExjLEY1WRRJGJ26dAyfief2dp6uza+LHG88Nfo0j3m3PlxW+AvM9eeboJEu+h7KfqWlXr2zrSs7pdFBpM3f7+dEG9uaWaeznUc7N9XFXh+keVxBJZK4PUy5u2Ytqv9Fm4WNvpnvXSmav9lfevtZFe2XFj9RcVqTrUFJ7Zz/87V2JCmSILGNbzR9z9mhcHRMtxc=", "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCS8A5ZVCNeibYgG2JlhzCLq3RVHdXmhNCBEGiQ+5ywTj/127AS5gu8ZGLzyMp6K1J4woTWHS4RfZzvycmC8vto=", "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIOmiLKMExRnsS1g7OTxMsOmgHuUSGQBUxHhuUGcv19uT", "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519", "ansible_system": "Linux", "ansible_kernel": "5.14.0-70.13.1.el9_0.x86_64", "ansible_kernel_version": "#1 SMP PREEMPT Thu Apr 14 12:42:38 EDT 2022", "ansible_machine": "x86_64", "ansible_python_version": "3.9.10", "ansible_fqdn": "servera.lab.example.com", "ansible_hostname": "servera", "ansible_nodename": "servera.lab.example.com", "ansible_domain": "lab.example.com", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "c6f53639c890455887f6f02a2d78ff3f", "ansible_distribution": "RedHat", "ansible_distribution_release": "Plow", "ansible_distribution_version": "9.0", "ansible_distribution_major_version": "9", "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_file_parsed": true, "ansible_distribution_file_search_string": "Red Hat", "ansible_os_family": "RedHat", "ansible_virtualization_role": "guest", "ansible_virtualization_type": "openstack", "ansible_virtualization_tech_guest": ["openstack"], "ansible_virtualization_tech_host": ["kvm"], "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_is_chroot": false, "ansible_hostnqn": "nqn.2014-08.org.nvmexpress:uuid:70ba7a79-d9fe-4ef9-9b40-3ee8778e8398", "ansible_fibre_channel_wwn": [], "ansible_python": {"version": {"major": 3, "minor": 9, "micro": 10, "releaselevel": "final", "serial": 0}, "version_info": [3, 9, 10, "final", 0], "executable": "/usr/bin/python3", "has_sslcontext": true, "type": "cpython"}, "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "root", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_date_time": {"year": "2024", "month": "06", "weekday": "Thursday", "weekday_number": "4", "weeknumber": "26", "day": "27", "hour": "09", "minute": "17", "second": "53", "epoch": "1719494273", "epoch_int": "1719494273", "date": "2024-06-27", "time": "09:17:53", "iso8601_micro": "2024-06-27T13:17:53.338432Z", "iso8601": "2024-06-27T13:17:53Z", "iso8601_basic": "20240627T091753338432", "iso8601_basic_short": "20240627T091753", "tz": "EDT", "tz_dst": "EDT", "tz_offset": "-0400"}, "ansible_local": {"emp": {"emp_info": {"emp_name": "teodor", "emp_id": "1929", "emp_location": "london"}, "dept_info": {"dept_name": "finance", "dept_id": "222", "dept_manager": "Catherine Wallace"}}}, "ansible_apparmor": {"status": "disabled"}, "ansible_lsb": {}, "ansible_env": {"SHELL": "/bin/bash", "PWD": "/root", "LOGNAME": "root", "XDG_SESSION_TYPE": "tty", "_": "/usr/bin/python3", "MOTD_SHOWN": "pam", "HOME": "/root", "LANG": "en_US.UTF-8", "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:", "SSH_CONNECTION": "172.25.250.9 44002 172.25.250.10 22", "XDG_SESSION_CLASS": "user", "SELINUX_ROLE_REQUESTED": "", "TERM": "xterm", "LESSOPEN": "||/usr/bin/lesspipe.sh %s", "USER": "root", "SELINUX_USE_CURRENT_RANGE": "", "SHLVL": "1", "XDG_SESSION_ID": "294", "XDG_RUNTIME_DIR": "/run/user/0", "SSH_CLIENT": "172.25.250.9 44002 22", "which_declare": "declare -f", "PATH": "/root/.local/bin:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin", "SELINUX_LEVEL_REQUESTED": "", "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus", "SSH_TTY": "/dev/pts/0", "BASH_FUNC_which%%": "() {  ( alias;\\n eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot \\"$@\\"\\n}"}, "ansible_iscsi_iqn": "", "ansible_cmdline": {"BOOT_IMAGE": "(hd0,gpt3)/vmlinuz-5.14.0-70.13.1.el9_0.x86_64", "root": "UUID=fb535add-9799-4a27-b8bc-e8259f39a767", "console": "ttyS0,115200n8", "no_timer_check": true, "net.ifnames": "0", "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M"}, "ansible_proc_cmdline": {"BOOT_IMAGE": "(hd0,gpt3)/vmlinuz-5.14.0-70.13.1.el9_0.x86_64", "root": "UUID=fb535add-9799-4a27-b8bc-e8259f39a767", "console": ["tty0", "ttyS0,115200n8"], "no_timer_check": true, "net.ifnames": "0", "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M"}, "ansible_pkg_mgr": "dnf", "ansible_selinux_python_present": true, "ansible_selinux": {"status": "enabled", "policyvers": 33, "config_mode": "enforcing", "mode": "enforcing", "type": "targeted"}, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz"], "ansible_processor_count": 1, "ansible_processor_cores": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 1, "ansible_processor_nproc": 1, "ansible_memtotal_mb": 960, "ansible_memfree_mb": 406, "ansible_swaptotal_mb": 0, "ansible_swapfree_mb": 0, "ansible_memory_mb": {"real": {"total": 960, "used": 554, "free": 406}, "nocache": {"free": 670, "used": 290}, "swap": {"total": 0, "free": 0, "used": 0, "cached": 0}}, "ansible_bios_date": "04/01/2014", "ansible_bios_vendor": "SeaBIOS", "ansible_bios_version": "1.14.0-1.module+el8.4.0+8855+a9e237a9", "ansible_board_asset_tag": "NA", "ansible_board_name": "NA", "ansible_board_serial": "NA", "ansible_board_vendor": "NA", "ansible_board_version": "NA", "ansible_chassis_asset_tag": "NA", "ansible_chassis_serial": "NA", "ansible_chassis_vendor": "Red Hat", "ansible_chassis_version": "RHEL 7.6.0 PC (i440FX + PIIX, 1996)", "ansible_form_factor": "Other", "ansible_product_name": "OpenStack Compute", "ansible_product_serial": "327bbb17-21a6-4eb1-89a2-d39ab47d45e4", "ansible_product_uuid": "327bbb17-21a6-4eb1-89a2-d39ab47d45e4", "ansible_product_version": "20.6.2-2.20221005185231.6786e96.el8ost", "ansible_system_vendor": "Red Hat", "ansible_devices": {"vdb": {"virtual": 1, "links": {"ids": ["virtio-17322f9a-1a79-4afe-8"], "uuids": [], "labels": [], "masters": []}, "vendor": "0x1af4", "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "mq-deadline", "sectors": "2097152", "sectorsize": "512", "size": "1.00 GB", "host": "SCSI storage controller: Red Hat, Inc. Virtio block device", "holders": []}, "vda": {"virtual": 1, "links": {"ids": ["virtio-0f821c2d-d81a-4e7f-9"], "uuids": [], "labels": [], "masters": []}, "vendor": "0x1af4", "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {"vda4": {"links": {"ids": ["virtio-0f821c2d-d81a-4e7f-9-part4"], "uuids": ["fb535add-9799-4a27-b8bc-e8259f39a767"], "labels": ["root"], "masters": []}, "start": "1437696", "sectors": "19533791", "sectorsize": 512, "size": "9.31 GB", "uuid": "fb535add-9799-4a27-b8bc-e8259f39a767", "holders": []}, "vda2": {"links": {"ids": ["virtio-0f821c2d-d81a-4e7f-9-part2"], "uuids": ["7B77-95E7"], "labels": [], "masters": []}, "start": "4096", "sectors": "409600", "sectorsize": 512, "size": "200.00 MB", "uuid": "7B77-95E7", "holders": []}, "vda3": {"links": {"ids": ["virtio-0f821c2d-d81a-4e7f-9-part3"], "uuids": ["5e75a2b9-1367-4cc8-bb38-4d6abc3964b8"], "labels": ["boot"], "masters": []}, "start": "413696", "sectors": "1024000", "sectorsize": 512, "size": "500.00 MB", "uuid": "5e75a2b9-1367-4cc8-bb38-4d6abc3964b8", "holders": []}, "vda1": {"links": {"ids": ["virtio-0f821c2d-d81a-4e7f-9-part1"], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectors": "2048", "sectorsize": 512, "size": "1.00 MB", "uuid": null, "holders": []}}, "rotational": "1", "scheduler_mode": "mq-deadline", "sectors": "20971520", "sectorsize": "512", "size": "10.00 GB", "host": "SCSI storage controller: Red Hat, Inc. Virtio block device", "holders": []}}, "ansible_device_links": {"ids": {"vda3": ["virtio-0f821c2d-d81a-4e7f-9-part3"], "vda4": ["virtio-0f821c2d-d81a-4e7f-9-part4"], "vda2": ["virtio-0f821c2d-d81a-4e7f-9-part2"], "vda1": ["virtio-0f821c2d-d81a-4e7f-9-part1"], "vdb": ["virtio-17322f9a-1a79-4afe-8"], "vda": ["virtio-0f821c2d-d81a-4e7f-9"]}, "uuids": {"vda4": ["fb535add-9799-4a27-b8bc-e8259f39a767"], "vda3": ["5e75a2b9-1367-4cc8-bb38-4d6abc3964b8"], "vda2": ["7B77-95E7"]}, "labels": {"vda3": ["boot"], "vda4": ["root"]}, "masters": {}}, "ansible_uptime_seconds": 125180, "ansible_lvm": {"lvs": {}, "vgs": {}, "pvs": {}}, "ansible_mounts": [{"mount": "/", "device": "/dev/vda4", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 9990811648, "size_available": 8128851968, "block_size": 4096, "block_total": 2439163, "block_available": 1984583, "block_used": 454580, "inode_total": 4883392, "inode_available": 4833893, "inode_used": 49499, "uuid": "fb535add-9799-4a27-b8bc-e8259f39a767"}, {"mount": "/boot", "device": "/dev/vda3", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 518684672, "size_available": 350957568, "block_size": 4096, "block_total": 126632, "block_available": 85683, "block_used": 40949, "inode_total": 256000, "inode_available": 255693, "inode_used": 307, "uuid": "5e75a2b9-1367-4cc8-bb38-4d6abc3964b8"}, {"mount": "/boot/efi", "device": "/dev/vda2", "fstype": "vfat", "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=winnt,errors=remount-ro", "size_total": 209489920, "size_available": 202170368, "block_size": 4096, "block_total": 51145, "block_available": 49358, "block_used": 1787, "inode_total": 0, "inode_available": 0, "inode_used": 0, "uuid": "7B77-95E7"}], "ansible_interfaces": ["eth0", "eth1", "lo"], "ansible_eth1": {"device": "eth1", "macaddress": "52:54:00:01:fa:1e", "mtu": 1500, "active": true, "module": "virtio_net", "type": "ether", "pciid": "virtio1", "speed": -1, "promisc": false, "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "on [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "on", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_eth0": {"device": "eth0", "macaddress": "52:54:00:00:fa:0a", "mtu": 1500, "active": true, "module": "virtio_net", "type": "ether", "pciid": "virtio0", "speed": -1, "promisc": false, "ipv4": {"address": "172.25.250.10", "broadcast": "172.25.250.255", "netmask": "255.255.255.0", "network": "172.25.250.0", "prefix": "24"}, "ipv6": [{"address": "fe80::a973:f7b3:7b00:e503", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "on [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "on", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "", "netmask": "255.0.0.0", "network": "127.0.0.0", "prefix": "8"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "172.25.250.254", "interface": "eth0", "address": "172.25.250.10", "broadcast": "172.25.250.255", "netmask": "255.255.255.0", "network": "172.25.250.0", "prefix": "24", "macaddress": "52:54:00:00:fa:0a", "mtu": 1500, "type": "ether", "alias": "eth0"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["172.25.250.10"], "ansible_all_ipv6_addresses": ["fe80::a973:f7b3:7b00:e503"], "ansible_dns": {"search": ["lab.example.com", "example.com"], "nameservers": ["172.25.250.220"]}, "ansible_fips": false, "ansible_service_mgr": "systemd", "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": [], "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to servera.lab.example.com closed.\r\n')
+2024-06-27 13:17:53,741 p=27 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:53,743 p=27 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1719494272.323105-27-266394368876614/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-06-27 13:17:53,789 p=27 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:53,823 p=21 u=root n=ansible | ok: [servera.lab.example.com]
+2024-06-27 13:17:53,845 p=21 u=root n=ansible | META: ran handlers
+2024-06-27 13:17:53,858 p=21 u=root n=ansible | TASK [Install Python if Not installed] *****************************************
+2024-06-27 13:17:53,888 p=41 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:53,890 p=41 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' -tt servera.lab.example.com 'sudo -H -S -n  -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ilsrznqemfmrztieanimdwffoqwpqyml ; dnf install -y python3'"'"''
+2024-06-27 13:17:53,955 p=41 u=root n=ansible | Escalation succeeded
+2024-06-27 13:17:54,585 p=41 u=root n=ansible | <servera.lab.example.com> (0, b'Last metadata expiration check: 1:03:51 ago on Thu 27 Jun 2024 08:14:03 AM EDT.\r\nPackage python3-3.9.10-2.el9.x86_64 is already installed.\r\nDependencies resolved.\r\nNothing to do.\r\nComplete!\r\n', b'Shared connection to servera.lab.example.com closed.\r\n')
+2024-06-27 13:17:54,596 p=21 u=root n=ansible | changed: [servera.lab.example.com] => {
+    "changed": true,
+    "rc": 0,
+    "stderr": "Shared connection to servera.lab.example.com closed.\r\n",
+    "stderr_lines": [
+        "Shared connection to servera.lab.example.com closed."
+    ],
+    "stdout": "Last metadata expiration check: 1:03:51 ago on Thu 27 Jun 2024 08:14:03 AM EDT.\r\nPackage python3-3.9.10-2.el9.x86_64 is already installed.\r\nDependencies resolved.\r\nNothing to do.\r\nComplete!\r\n",
+    "stdout_lines": [
+        "Last metadata expiration check: 1:03:51 ago on Thu 27 Jun 2024 08:14:03 AM EDT.",
+        "Package python3-3.9.10-2.el9.x86_64 is already installed.",
+        "Dependencies resolved.",
+        "Nothing to do.",
+        "Complete!"
+    ]
+}
+2024-06-27 13:17:54,619 p=21 u=root n=ansible | TASK [Read 4 lines] ************************************************************
+2024-06-27 13:17:54,649 p=44 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:54,650 p=44 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2024-06-27 13:17:54,695 p=44 u=root n=ansible | <servera.lab.example.com> (0, b'/root\n', b'')
+2024-06-27 13:17:54,698 p=44 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:54,700 p=44 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865 `" && echo ansible-tmp-1719494274.6965935-44-13776393833865="` echo /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865 `" ) && sleep 0'"'"''
+2024-06-27 13:17:54,748 p=44 u=root n=ansible | <servera.lab.example.com> (0, b'ansible-tmp-1719494274.6965935-44-13776393833865=/root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865\n', b'')
+2024-06-27 13:17:54,940 p=44 u=root n=ansible | Using module file /usr/lib/python3.9/site-packages/ansible/modules/command.py
+2024-06-27 13:17:54,941 p=44 u=root n=ansible | <servera.lab.example.com> PUT /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpax39anlr TO /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865/AnsiballZ_command.py
+2024-06-27 13:17:54,943 p=44 u=root n=ansible | <servera.lab.example.com> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' '[servera.lab.example.com]'
+2024-06-27 13:17:55,030 p=44 u=root n=ansible | <servera.lab.example.com> (0, b'sftp> put /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpax39anlr /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865/AnsiballZ_command.py\n', b'')
+2024-06-27 13:17:55,033 p=44 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:55,037 p=44 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865/ /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865/AnsiballZ_command.py && sleep 0'"'"''
+2024-06-27 13:17:55,077 p=44 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:55,079 p=44 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:55,081 p=44 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' -tt servera.lab.example.com '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865/AnsiballZ_command.py && sleep 0'"'"''
+2024-06-27 13:17:55,302 p=44 u=root n=ansible | <servera.lab.example.com> (0, b'\r\n{"changed": true, "stdout": "root:x:0:0:root:/root:/bin/bash\\nbin:x:1:1:bin:/bin:/sbin/nologin\\ndaemon:x:2:2:daemon:/sbin:/sbin/nologin\\nadm:x:3:4:adm:/var/adm:/sbin/nologin", "stderr": "", "rc": 0, "cmd": ["head", "-4", "/etc/passwd"], "start": "2024-06-27 09:17:55.278545", "end": "2024-06-27 09:17:55.284875", "delta": "0:00:00.006330", "msg": "", "invocation": {"module_args": {"_raw_params": "head -4 /etc/passwd", "_uses_shell": false, "warn": false, "stdin_add_newline": true, "strip_empty_ends": true, "argv": null, "chdir": null, "executable": null, "creates": null, "removes": null, "stdin": null}}}\r\n', b'Shared connection to servera.lab.example.com closed.\r\n')
+2024-06-27 13:17:55,306 p=44 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:55,309 p=44 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1719494274.6965935-44-13776393833865/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-06-27 13:17:55,349 p=44 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:55,364 p=21 u=root n=ansible | changed: [servera.lab.example.com] => {
+    "changed": true,
+    "cmd": [
+        "head",
+        "-4",
+        "/etc/passwd"
+    ],
+    "delta": "0:00:00.006330",
+    "end": "2024-06-27 09:17:55.284875",
+    "invocation": {
+        "module_args": {
+            "_raw_params": "head -4 /etc/passwd",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true,
+            "warn": false
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "start": "2024-06-27 09:17:55.278545",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "root:x:0:0:root:/root:/bin/bash\nbin:x:1:1:bin:/bin:/sbin/nologin\ndaemon:x:2:2:daemon:/sbin:/sbin/nologin\nadm:x:3:4:adm:/var/adm:/sbin/nologin",
+    "stdout_lines": [
+        "root:x:0:0:root:/root:/bin/bash",
+        "bin:x:1:1:bin:/bin:/sbin/nologin",
+        "daemon:x:2:2:daemon:/sbin:/sbin/nologin",
+        "adm:x:3:4:adm:/var/adm:/sbin/nologin"
+    ]
+}
+2024-06-27 13:17:55,381 p=21 u=root n=ansible | TASK [Create a file in tmp folder] *********************************************
+2024-06-27 13:17:55,419 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:55,421 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2024-06-27 13:17:55,468 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'/root\n', b'')
+2024-06-27 13:17:55,470 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:55,473 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356 `" && echo ansible-tmp-1719494275.4692528-53-153627292002356="` echo /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356 `" ) && sleep 0'"'"''
+2024-06-27 13:17:55,523 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'ansible-tmp-1719494275.4692528-53-153627292002356=/root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356\n', b'')
+2024-06-27 13:17:55,719 p=53 u=root n=ansible | Using module file /usr/lib/python3.9/site-packages/ansible/modules/stat.py
+2024-06-27 13:17:55,720 p=53 u=root n=ansible | <servera.lab.example.com> PUT /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpw8yxz2s3 TO /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_stat.py
+2024-06-27 13:17:55,721 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' '[servera.lab.example.com]'
+2024-06-27 13:17:55,800 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'sftp> put /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpw8yxz2s3 /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_stat.py\n', b'')
+2024-06-27 13:17:55,802 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:55,804 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/ /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_stat.py && sleep 0'"'"''
+2024-06-27 13:17:55,849 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:55,850 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:55,852 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' -tt servera.lab.example.com '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_stat.py && sleep 0'"'"''
+2024-06-27 13:17:56,112 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'\r\n{"changed": false, "stat": {"exists": true, "path": "/tmp/meme", "mode": "0644", "isdir": false, "ischr": false, "isblk": false, "isreg": true, "isfifo": false, "islnk": false, "issock": false, "uid": 1001, "gid": 1001, "size": 23, "inode": 9088164, "dev": 64516, "nlink": 1, "atime": 1719311139.5847461, "mtime": 1719311139.0427344, "ctime": 1719311139.5867462, "wusr": true, "rusr": true, "xusr": false, "wgrp": false, "rgrp": true, "xgrp": false, "woth": false, "roth": true, "xoth": false, "isuid": false, "isgid": false, "blocks": 8, "block_size": 4096, "device_type": 0, "readable": true, "writeable": true, "executable": false, "pw_name": "devops", "gr_name": "devops", "checksum": "592509107b013a48e16eedc2040c3662c952aea6", "mimetype": "text/plain", "charset": "us-ascii", "version": "1271192419", "attributes": [], "attr_flags": ""}, "invocation": {"module_args": {"path": "/tmp/meme", "follow": false, "get_checksum": true, "checksum_algorithm": "sha1", "get_md5": false, "get_mime": true, "get_attributes": true}}}\r\n', b'Shared connection to servera.lab.example.com closed.\r\n')
+2024-06-27 13:17:56,117 p=53 u=root n=ansible | <servera.lab.example.com> PUT /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmprqjr23kj TO /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/source
+2024-06-27 13:17:56,120 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' '[servera.lab.example.com]'
+2024-06-27 13:17:56,186 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'sftp> put /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmprqjr23kj /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/source\n', b'')
+2024-06-27 13:17:56,188 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:56,189 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/ /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/source && sleep 0'"'"''
+2024-06-27 13:17:56,237 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:56,438 p=53 u=root n=ansible | Using module file /usr/lib/python3.9/site-packages/ansible/modules/copy.py
+2024-06-27 13:17:56,439 p=53 u=root n=ansible | <servera.lab.example.com> PUT /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpovmaik8q TO /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_copy.py
+2024-06-27 13:17:56,440 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' '[servera.lab.example.com]'
+2024-06-27 13:17:56,518 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'sftp> put /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpovmaik8q /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_copy.py\n', b'')
+2024-06-27 13:17:56,521 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:56,523 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/ /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_copy.py && sleep 0'"'"''
+2024-06-27 13:17:56,569 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:56,571 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:56,573 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' -tt servera.lab.example.com '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/AnsiballZ_copy.py && sleep 0'"'"''
+2024-06-27 13:17:56,799 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'\r\n{"dest": "/tmp/meme", "src": "/root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/source", "md5sum": "444c68cfcc5f21a3bd39f788045c5ace", "checksum": "6771f4c472eada02062657fc7b1c49e2c22b88a5", "changed": true, "uid": 1001, "gid": 1001, "owner": "devops", "group": "devops", "mode": "0644", "state": "file", "secontext": "unconfined_u:object_r:user_home_t:s0", "size": 12, "invocation": {"module_args": {"dest": "/tmp/meme", "src": "/root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/source", "_original_basename": "tmprqjr23kj", "follow": false, "checksum": "6771f4c472eada02062657fc7b1c49e2c22b88a5", "backup": false, "force": true, "unsafe_writes": false, "content": null, "validate": null, "directory_mode": null, "remote_src": null, "local_follow": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to servera.lab.example.com closed.\r\n')
+2024-06-27 13:17:56,802 p=53 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:56,805 p=53 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-06-27 13:17:56,846 p=53 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:56,856 p=21 u=root n=ansible | changed: [servera.lab.example.com] => {
+    "changed": true,
+    "checksum": "6771f4c472eada02062657fc7b1c49e2c22b88a5",
+    "dest": "/tmp/meme",
+    "diff": [],
+    "gid": 1001,
+    "group": "devops",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "tmprqjr23kj",
+            "attributes": null,
+            "backup": false,
+            "checksum": "6771f4c472eada02062657fc7b1c49e2c22b88a5",
+            "content": null,
+            "dest": "/tmp/meme",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": null,
+            "local_follow": null,
+            "mode": null,
+            "owner": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/source",
+            "unsafe_writes": false,
+            "validate": null
+        }
+    },
+    "md5sum": "444c68cfcc5f21a3bd39f788045c5ace",
+    "mode": "0644",
+    "owner": "devops",
+    "secontext": "unconfined_u:object_r:user_home_t:s0",
+    "size": 12,
+    "src": "/root/.ansible/tmp/ansible-tmp-1719494275.4692528-53-153627292002356/source",
+    "state": "file",
+    "uid": 1001
+}
+2024-06-27 13:17:56,886 p=21 u=root n=ansible | TASK [Install Web Server] ******************************************************
+2024-06-27 13:17:56,930 p=69 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:56,931 p=69 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2024-06-27 13:17:56,978 p=69 u=root n=ansible | <servera.lab.example.com> (0, b'/root\n', b'')
+2024-06-27 13:17:56,981 p=69 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:56,984 p=69 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307 `" && echo ansible-tmp-1719494276.9799657-69-90117834007307="` echo /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307 `" ) && sleep 0'"'"''
+2024-06-27 13:17:57,028 p=69 u=root n=ansible | <servera.lab.example.com> (0, b'ansible-tmp-1719494276.9799657-69-90117834007307=/root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307\n', b'')
+2024-06-27 13:17:57,244 p=69 u=root n=ansible | Using module file /usr/lib/python3.9/site-packages/ansible/modules/dnf.py
+2024-06-27 13:17:57,245 p=69 u=root n=ansible | <servera.lab.example.com> PUT /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpu2neoih_ TO /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307/AnsiballZ_dnf.py
+2024-06-27 13:17:57,246 p=69 u=root n=ansible | <servera.lab.example.com> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' '[servera.lab.example.com]'
+2024-06-27 13:17:57,329 p=69 u=root n=ansible | <servera.lab.example.com> (0, b'sftp> put /home/runner/.ansible/tmp/ansible-local-21cnkdyzgi/tmpu2neoih_ /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307/AnsiballZ_dnf.py\n', b'')
+2024-06-27 13:17:57,332 p=69 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:57,335 p=69 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307/ /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307/AnsiballZ_dnf.py && sleep 0'"'"''
+2024-06-27 13:17:57,370 p=69 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:57,372 p=69 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:57,375 p=69 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' -tt servera.lab.example.com '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-myqloemzxvcjnbfesnhingpsnoacdxbx ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307/AnsiballZ_dnf.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-06-27 13:17:57,448 p=69 u=root n=ansible | Escalation succeeded
+2024-06-27 13:17:58,216 p=69 u=root n=ansible | <servera.lab.example.com> (0, b'\r\n{"msg": "Nothing to do", "changed": false, "results": [], "rc": 0, "invocation": {"module_args": {"name": ["httpd"], "state": "latest", "allow_downgrade": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_repoquery": true, "install_weak_deps": true, "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "allowerasing": false, "nobest": false, "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "releasever": null}}}\r\n', b'Shared connection to servera.lab.example.com closed.\r\n')
+2024-06-27 13:17:58,220 p=69 u=root n=ansible | <servera.lab.example.com> ESTABLISH SSH CONNECTION FOR USER: None
+2024-06-27 13:17:58,222 p=69 u=root n=ansible | <servera.lab.example.com> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o 'ControlPath="/home/runner/.ansible/cp/c42b3cd827"' servera.lab.example.com '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1719494276.9799657-69-90117834007307/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-06-27 13:17:58,266 p=69 u=root n=ansible | <servera.lab.example.com> (0, b'', b'')
+2024-06-27 13:17:58,284 p=21 u=root n=ansible | ok: [servera.lab.example.com] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "httpd"
+            ],
+            "nobest": false,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "latest",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+2024-06-27 13:17:58,308 p=21 u=root n=ansible | META: ran handlers
+2024-06-27 13:17:58,330 p=21 u=root n=ansible | META: ran handlers
+2024-06-27 13:17:58,333 p=21 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-27 13:17:58,333 p=21 u=root n=ansible | servera.lab.example.com    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:21:05,101 p=16 u=root n=ansible | {"/usr/share/ansible/collections/ansible_collections": {"amazon.aws": {"version": "3.2.0"}, "ansible.controller": {"version": "4.2.1"}, "ansible.netcommon": {"version": "3.0.0"}, "ansible.network": {"version": "1.2.0"}, "ansible.posix": {"version": "1.3.0"}, "ansible.security": {"version": "1.0.0"}, "ansible.utils": {"version": "2.6.1"}, "ansible.windows": {"version": "1.9.0"}, "ansible.yang": {"version": "1.0.0"}, "arista.eos": {"version": "5.0.0"}, "cisco.asa": {"version": "3.0.0"}, "cisco.ios": {"version": "3.0.0"}, "cisco.iosxr": {"version": "3.0.0"}, "cisco.nxos": {"version": "3.0.0"}, "cloud.common": {"version": "2.1.1"}, "frr.frr": {"version": "2.0.0"}, "ibm.qradar": {"version": "2.0.0"}, "junipernetworks.junos": {"version": "3.0.0"}, "kubernetes.core": {"version": "2.2.3"}, "openvswitch.openvswitch": {"version": "2.1.0"}, "redhat.insights": {"version": "1.0.7"}, "redhat.openshift": {"version": "2.1.0"}, "redhat.rhv": {"version": "1.6.5"}, "redhat.satellite": {"version": "3.3.0"}, "servicenow.itsm": {"version": "1.3.3"}, "splunk.es": {"version": "2.0.0"}, "trendmicro.deepsec": {"version": "2.0.0"}, "vmware.vmware_rest": {"version": "2.1.5"}, "vyos.vyos": {"version": "3.0.0"}}}
+2024-06-27 13:21:06,474 p=21 u=root n=ansible | PLAY [Setup Web Server Configuration Play] ******************************************
+2024-06-27 13:21:06,508 p=21 u=root n=ansible | TASK [Open Firewall Port] ***********************************************************
+2024-06-27 13:21:07,925 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:21:07,937 p=21 u=root n=ansible | TASK [Install Web Server] ***********************************************************
+2024-06-27 13:21:13,323 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:21:13,334 p=21 u=root n=ansible | TASK [Deploy my Application] ********************************************************
+2024-06-27 13:21:14,731 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:21:14,747 p=21 u=root n=ansible | TASK [Start Web Service] ************************************************************
+2024-06-27 13:21:16,643 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:21:16,667 p=21 u=root n=ansible | PLAY [Test Web Server from Client Machine] ******************************************
+2024-06-27 13:21:16,686 p=21 u=root n=ansible | TASK [Curl the App Page] ************************************************************
+2024-06-27 13:21:18,215 p=21 u=root n=ansible | ok: [workstation.lab.example.com]
+2024-06-27 13:21:18,229 p=21 u=root n=ansible | TASK [Ping the Host] ****************************************************************
+2024-06-27 13:21:19,141 p=21 u=root n=ansible | ok: [workstation.lab.example.com]
+2024-06-27 13:21:19,166 p=21 u=root n=ansible | PLAY RECAP **************************************************************************
+2024-06-27 13:21:19,166 p=21 u=root n=ansible | servera.lab.example.com    : ok=4    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:21:19,166 p=21 u=root n=ansible | workstation.lab.example.com : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:21:39,590 p=16 u=root n=ansible | {"/usr/share/ansible/collections/ansible_collections": {"amazon.aws": {"version": "3.2.0"}, "ansible.controller": {"version": "4.2.1"}, "ansible.netcommon": {"version": "3.0.0"}, "ansible.network": {"version": "1.2.0"}, "ansible.posix": {"version": "1.3.0"}, "ansible.security": {"version": "1.0.0"}, "ansible.utils": {"version": "2.6.1"}, "ansible.windows": {"version": "1.9.0"}, "ansible.yang": {"version": "1.0.0"}, "arista.eos": {"version": "5.0.0"}, "cisco.asa": {"version": "3.0.0"}, "cisco.ios": {"version": "3.0.0"}, "cisco.iosxr": {"version": "3.0.0"}, "cisco.nxos": {"version": "3.0.0"}, "cloud.common": {"version": "2.1.1"}, "frr.frr": {"version": "2.0.0"}, "ibm.qradar": {"version": "2.0.0"}, "junipernetworks.junos": {"version": "3.0.0"}, "kubernetes.core": {"version": "2.2.3"}, "openvswitch.openvswitch": {"version": "2.1.0"}, "redhat.insights": {"version": "1.0.7"}, "redhat.openshift": {"version": "2.1.0"}, "redhat.rhv": {"version": "1.6.5"}, "redhat.satellite": {"version": "3.3.0"}, "servicenow.itsm": {"version": "1.3.3"}, "splunk.es": {"version": "2.0.0"}, "trendmicro.deepsec": {"version": "2.0.0"}, "vmware.vmware_rest": {"version": "2.1.5"}, "vyos.vyos": {"version": "3.0.0"}}}
+2024-06-27 13:21:41,081 p=21 u=root n=ansible | PLAY [Check Mode Demo] **************************************************************
+2024-06-27 13:21:41,109 p=21 u=root n=ansible | TASK [Open Firewall Port] ***********************************************************
+2024-06-27 13:21:42,345 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:21:42,355 p=21 u=root n=ansible | TASK [Install Web Server] ***********************************************************
+2024-06-27 13:21:43,688 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:21:43,701 p=21 u=root n=ansible | TASK [Deploy my Application] ********************************************************
+2024-06-27 13:21:44,385 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:21:44,399 p=21 u=root n=ansible | TASK [Start Web Service] ************************************************************
+2024-06-27 13:21:46,297 p=21 u=root n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "Could not find the requested service httpd: host"}
+2024-06-27 13:21:46,301 p=21 u=root n=ansible | PLAY RECAP **************************************************************************
+2024-06-27 13:21:46,302 p=21 u=root n=ansible | servera.lab.example.com    : ok=3    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:23:15,584 p=16 u=root n=ansible | {"/usr/share/ansible/collections/ansible_collections": {"amazon.aws": {"version": "3.2.0"}, "ansible.controller": {"version": "4.2.1"}, "ansible.netcommon": {"version": "3.0.0"}, "ansible.network": {"version": "1.2.0"}, "ansible.posix": {"version": "1.3.0"}, "ansible.security": {"version": "1.0.0"}, "ansible.utils": {"version": "2.6.1"}, "ansible.windows": {"version": "1.9.0"}, "ansible.yang": {"version": "1.0.0"}, "arista.eos": {"version": "5.0.0"}, "cisco.asa": {"version": "3.0.0"}, "cisco.ios": {"version": "3.0.0"}, "cisco.iosxr": {"version": "3.0.0"}, "cisco.nxos": {"version": "3.0.0"}, "cloud.common": {"version": "2.1.1"}, "frr.frr": {"version": "2.0.0"}, "ibm.qradar": {"version": "2.0.0"}, "junipernetworks.junos": {"version": "3.0.0"}, "kubernetes.core": {"version": "2.2.3"}, "openvswitch.openvswitch": {"version": "2.1.0"}, "redhat.insights": {"version": "1.0.7"}, "redhat.openshift": {"version": "2.1.0"}, "redhat.rhv": {"version": "1.6.5"}, "redhat.satellite": {"version": "3.3.0"}, "servicenow.itsm": {"version": "1.3.3"}, "splunk.es": {"version": "2.0.0"}, "trendmicro.deepsec": {"version": "2.0.0"}, "vmware.vmware_rest": {"version": "2.1.5"}, "vyos.vyos": {"version": "3.0.0"}}}
+2024-06-27 13:23:16,940 p=21 u=root n=ansible | PLAY [Check Mode Demo] **************************************************************
+2024-06-27 13:23:16,966 p=21 u=root n=ansible | TASK [Open Firewall Port] ***********************************************************
+2024-06-27 13:23:18,364 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:23:18,379 p=21 u=root n=ansible | TASK [Install Web Server] ***********************************************************
+2024-06-27 13:23:19,930 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:23:19,949 p=21 u=root n=ansible | TASK [Deploy my Application] ********************************************************
+2024-06-27 13:23:20,652 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:23:20,671 p=21 u=root n=ansible | TASK [Start Web Service] ************************************************************
+2024-06-27 13:23:22,531 p=21 u=root n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "Could not find the requested service httpd: host"}
+2024-06-27 13:23:22,535 p=21 u=root n=ansible | PLAY RECAP **************************************************************************
+2024-06-27 13:23:22,536 p=21 u=root n=ansible | servera.lab.example.com    : ok=3    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:24:42,641 p=16 u=root n=ansible | {"/usr/share/ansible/collections/ansible_collections": {"amazon.aws": {"version": "3.2.0"}, "ansible.controller": {"version": "4.2.1"}, "ansible.netcommon": {"version": "3.0.0"}, "ansible.network": {"version": "1.2.0"}, "ansible.posix": {"version": "1.3.0"}, "ansible.security": {"version": "1.0.0"}, "ansible.utils": {"version": "2.6.1"}, "ansible.windows": {"version": "1.9.0"}, "ansible.yang": {"version": "1.0.0"}, "arista.eos": {"version": "5.0.0"}, "cisco.asa": {"version": "3.0.0"}, "cisco.ios": {"version": "3.0.0"}, "cisco.iosxr": {"version": "3.0.0"}, "cisco.nxos": {"version": "3.0.0"}, "cloud.common": {"version": "2.1.1"}, "frr.frr": {"version": "2.0.0"}, "ibm.qradar": {"version": "2.0.0"}, "junipernetworks.junos": {"version": "3.0.0"}, "kubernetes.core": {"version": "2.2.3"}, "openvswitch.openvswitch": {"version": "2.1.0"}, "redhat.insights": {"version": "1.0.7"}, "redhat.openshift": {"version": "2.1.0"}, "redhat.rhv": {"version": "1.6.5"}, "redhat.satellite": {"version": "3.3.0"}, "servicenow.itsm": {"version": "1.3.3"}, "splunk.es": {"version": "2.0.0"}, "trendmicro.deepsec": {"version": "2.0.0"}, "vmware.vmware_rest": {"version": "2.1.5"}, "vyos.vyos": {"version": "3.0.0"}}}
+2024-06-27 13:24:44,014 p=21 u=root n=ansible | PLAY [Check Mode Demo] *************************************************************
+2024-06-27 13:24:45,804 p=21 u=root n=ansible | Perform task: TASK: Open Firewall Port (N)o/(y)es/(c)ontinue: **********************
+2024-06-27 13:24:45,807 p=21 u=root n=ansible | TASK [Open Firewall Port] **********************************************************
+2024-06-27 13:24:47,090 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:24:59,858 p=21 u=root n=ansible | Perform task: TASK: Install Web Server (N)o/(y)es/(c)ontinue: **********************
+2024-06-27 13:24:59,860 p=21 u=root n=ansible | TASK [Install Web Server] **********************************************************
+2024-06-27 13:25:04,918 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:25:16,710 p=21 u=root n=ansible | Perform task: TASK: Deploy my Application (N)o/(y)es/(c)ontinue: *******************
+2024-06-27 13:25:16,713 p=21 u=root n=ansible | TASK [Deploy my Application] *******************************************************
+2024-06-27 13:25:17,453 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:25:32,174 p=21 u=root n=ansible | Perform task: TASK: Start Web Service (N)o/(y)es/(c)ontinue: ***********************
+2024-06-27 13:25:32,176 p=21 u=root n=ansible | TASK [Start Web Service] ***********************************************************
+2024-06-27 13:25:33,979 p=21 u=root n=ansible | changed: [servera.lab.example.com]
+2024-06-27 13:25:33,999 p=21 u=root n=ansible | PLAY RECAP *************************************************************************
+2024-06-27 13:25:33,999 p=21 u=root n=ansible | servera.lab.example.com    : ok=4    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:29:35,390 p=16 u=root n=ansible | {"/usr/share/ansible/collections/ansible_collections": {"amazon.aws": {"version": "3.2.0"}, "ansible.controller": {"version": "4.2.1"}, "ansible.netcommon": {"version": "3.0.0"}, "ansible.network": {"version": "1.2.0"}, "ansible.posix": {"version": "1.3.0"}, "ansible.security": {"version": "1.0.0"}, "ansible.utils": {"version": "2.6.1"}, "ansible.windows": {"version": "1.9.0"}, "ansible.yang": {"version": "1.0.0"}, "arista.eos": {"version": "5.0.0"}, "cisco.asa": {"version": "3.0.0"}, "cisco.ios": {"version": "3.0.0"}, "cisco.iosxr": {"version": "3.0.0"}, "cisco.nxos": {"version": "3.0.0"}, "cloud.common": {"version": "2.1.1"}, "frr.frr": {"version": "2.0.0"}, "ibm.qradar": {"version": "2.0.0"}, "junipernetworks.junos": {"version": "3.0.0"}, "kubernetes.core": {"version": "2.2.3"}, "openvswitch.openvswitch": {"version": "2.1.0"}, "redhat.insights": {"version": "1.0.7"}, "redhat.openshift": {"version": "2.1.0"}, "redhat.rhv": {"version": "1.6.5"}, "redhat.satellite": {"version": "3.3.0"}, "servicenow.itsm": {"version": "1.3.3"}, "splunk.es": {"version": "2.0.0"}, "trendmicro.deepsec": {"version": "2.0.0"}, "vmware.vmware_rest": {"version": "2.1.5"}, "vyos.vyos": {"version": "3.0.0"}}}
+2024-06-27 13:29:36,706 p=21 u=root n=ansible | PLAY [Template Demo] ***********************************************************
+2024-06-27 13:29:36,723 p=21 u=root n=ansible | TASK [Gathering Facts] *********************************************************
+2024-06-27 13:29:38,488 p=21 u=root n=ansible | ok: [serverc.lab.example.com]
+2024-06-27 13:29:38,522 p=21 u=root n=ansible | ok: [serverb.lab.example.com]
+2024-06-27 13:29:38,595 p=21 u=root n=ansible | ok: [servera.lab.example.com]
+2024-06-27 13:29:38,967 p=21 u=root n=ansible | ok: [workstation.lab.example.com]
+2024-06-27 13:29:39,744 p=21 u=root n=ansible | ok: [172.25.250.12]
+2024-06-27 13:29:39,943 p=21 u=root n=ansible | ok: [serverd.lab.example.com]
+2024-06-27 13:29:39,970 p=21 u=root n=ansible | TASK [Collect Information Complex Template] ************************************
+2024-06-27 13:29:40,039 p=21 u=root n=ansible | skipping: [serverc.lab.example.com]
+2024-06-27 13:29:40,060 p=21 u=root n=ansible | skipping: [servera.lab.example.com]
+2024-06-27 13:29:40,082 p=21 u=root n=ansible | skipping: [serverb.lab.example.com]
+2024-06-27 13:29:40,083 p=21 u=root n=ansible | skipping: [serverd.lab.example.com]
+2024-06-27 13:29:40,096 p=21 u=root n=ansible | skipping: [172.25.250.12]
+2024-06-27 13:29:42,720 p=21 u=root n=ansible | changed: [workstation.lab.example.com]
+2024-06-27 13:29:42,745 p=21 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-27 13:29:42,746 p=21 u=root n=ansible | 172.25.250.12              : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:29:42,746 p=21 u=root n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:29:42,746 p=21 u=root n=ansible | serverb.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:29:42,746 p=21 u=root n=ansible | serverc.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:29:42,747 p=21 u=root n=ansible | serverd.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:29:42,747 p=21 u=root n=ansible | workstation.lab.example.com : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-27 13:32:27,152 p=16 u=root n=ansible | {"/usr/share/ansible/collections/ansible_collections": {"amazon.aws": {"version": "3.2.0"}, "ansible.controller": {"version": "4.2.1"}, "ansible.netcommon": {"version": "3.0.0"}, "ansible.network": {"version": "1.2.0"}, "ansible.posix": {"version": "1.3.0"}, "ansible.security": {"version": "1.0.0"}, "ansible.utils": {"version": "2.6.1"}, "ansible.windows": {"version": "1.9.0"}, "ansible.yang": {"version": "1.0.0"}, "arista.eos": {"version": "5.0.0"}, "cisco.asa": {"version": "3.0.0"}, "cisco.ios": {"version": "3.0.0"}, "cisco.iosxr": {"version": "3.0.0"}, "cisco.nxos": {"version": "3.0.0"}, "cloud.common": {"version": "2.1.1"}, "frr.frr": {"version": "2.0.0"}, "ibm.qradar": {"version": "2.0.0"}, "junipernetworks.junos": {"version": "3.0.0"}, "kubernetes.core": {"version": "2.2.3"}, "openvswitch.openvswitch": {"version": "2.1.0"}, "redhat.insights": {"version": "1.0.7"}, "redhat.openshift": {"version": "2.1.0"}, "redhat.rhv": {"version": "1.6.5"}, "redhat.satellite": {"version": "3.3.0"}, "servicenow.itsm": {"version": "1.3.3"}, "splunk.es": {"version": "2.0.0"}, "trendmicro.deepsec": {"version": "2.0.0"}, "vmware.vmware_rest": {"version": "2.1.5"}, "vyos.vyos": {"version": "3.0.0"}}}
+2024-06-27 13:32:28,547 p=21 u=root n=ansible | PLAY [Template Demo] **********************************************************************************
+2024-06-27 13:32:28,566 p=21 u=root n=ansible | TASK [Gathering Facts] ********************************************************************************
+2024-06-27 13:32:30,373 p=21 u=root n=ansible | ok: [serverc.lab.example.com]
+2024-06-27 13:32:30,404 p=21 u=root n=ansible | ok: [servera.lab.example.com]
+2024-06-27 13:32:30,413 p=21 u=root n=ansible | ok: [serverb.lab.example.com]
+2024-06-27 13:32:30,745 p=21 u=root n=ansible | ok: [workstation.lab.example.com]
+2024-06-27 13:32:31,663 p=21 u=root n=ansible | ok: [172.25.250.12]
+2024-06-27 13:32:31,888 p=21 u=root n=ansible | ok: [serverd.lab.example.com]
+2024-06-27 13:32:31,916 p=21 u=root n=ansible | TASK [Collect Information Complex Template] ***********************************************************
+2024-06-27 13:32:31,989 p=21 u=root n=ansible | skipping: [serverc.lab.example.com]
+2024-06-27 13:32:32,007 p=21 u=root n=ansible | skipping: [servera.lab.example.com]
+2024-06-27 13:32:32,030 p=21 u=root n=ansible | skipping: [serverb.lab.example.com]
+2024-06-27 13:32:32,031 p=21 u=root n=ansible | skipping: [serverd.lab.example.com]
+2024-06-27 13:32:32,039 p=21 u=root n=ansible | skipping: [172.25.250.12]
+2024-06-27 13:32:35,210 p=21 u=root n=ansible | [0;31m--- before: /tmp/info.txt[0m
+[0;31m[0m[0;32m+++ after: /home/runner/.ansible/tmp/ansible-local-21872t3na_/tmpji0jr18p/complex_template.j2[0m
+[0;32m[0m[0;36m@@ -8,12 +8,12 @@[0m
+[0;36m[0m Arch  		= x86_64
+ Arch  		= x86_64
+ Time  		= 2024-06-27
+[0;31m-Hour  		= 09:29:38[0m
+[0;31m[0m[0;32m+Hour  		= 09:32:30[0m
+[0;32m[0m IP    		= 172.25.250.9
+ Dev A 		= 20.00 GB
+ OS    		= RedHat
+ Kernel		= 5.14.0-70.13.1.el9_0.x86_64
+[0;31m-Free  		= 3377[0m
+[0;31m[0m[0;32m+Free  		= 3365[0m
+[0;32m[0m manager 	= Not Defined
+ Location 	= Not Defined
+ Dept Name 	= Not Applicable
+[0;36m@@ -29,12 +29,12 @@[0m
+[0;36m[0m Arch  		= x86_64
+ Arch  		= x86_64
+ Time  		= 2024-06-27
+[0;31m-Hour  		= 09:29:38[0m
+[0;31m[0m[0;32m+Hour  		= 09:32:30[0m
+[0;32m[0m IP    		= 172.25.250.12
+ Dev A 		= 10.00 GB
+ OS    		= RedHat
+ Kernel		= 5.14.0-70.13.1.el9_0.x86_64
+[0;31m-Free  		= 431[0m
+[0;31m[0m[0;32m+Free  		= 430[0m
+[0;32m[0m manager 	= Not Defined
+ Location 	= Not Defined
+ Dept Name 	= Not Applicable
+[0;36m@@ -48,12 +48,12 @@[0m
+[0;36m[0m Arch  		= x86_64
+ Arch  		= x86_64
+ Time  		= 2024-06-27
+[0;31m-Hour  		= 09:29:38[0m
+[0;31m[0m[0;32m+Hour  		= 09:32:30[0m
+[0;32m[0m IP    		= 172.25.250.10
+ Dev A 		= 10.00 GB
+ OS    		= RedHat
+ Kernel		= 5.14.0-70.13.1.el9_0.x86_64
+[0;31m-Free  		= 416[0m
+[0;31m[0m[0;32m+Free  		= 417[0m
+[0;32m[0m manager 	= Catherine Wallace
+ Location 	= london
+ Dept Name 	= finance
+[0;36m@@ -67,15 +67,15 @@[0m
+[0;36m[0m Arch  		= x86_64
+ Arch  		= x86_64
+ Time  		= 2024-06-27
+[0;31m-Hour  		= 09:29:38[0m
+[0;31m[0m[0;32m+Hour  		= 09:32:29[0m
+[0;32m[0m IP    		= 172.25.250.11
+ Dev A 		= 10.00 GB
+ OS    		= RedHat
+ Kernel		= 5.14.0-70.13.1.el9_0.x86_64
+ Free  		= 391
+[0;31m-manager 	= Not Defined[0m
+[0;31m[0m[0;31m-Location 	= Not Defined[0m
+[0;31m[0m[0;31m-Dept Name 	= Not Applicable[0m
+[0;31m[0m[0;32m+manager 	= Navdeep[0m
+[0;32m[0m[0;32m+Location 	= Glasgow[0m
+[0;32m[0m[0;32m+Dept Name 	= security[0m
+[0;32m[0m 
+ ## Managed Host Information for serverd.lab.example.com ##
+ System Name	= serverd.lab.example.com
+[0;36m@@ -86,7 +86,7 @@[0m
+[0;36m[0m Arch  		= x86_64
+ Arch  		= x86_64
+ Time  		= 2024-06-27
+[0;31m-Hour  		= 09:29:39[0m
+[0;31m[0m[0;32m+Hour  		= 09:32:31[0m
+[0;32m[0m IP    		= 172.25.250.13
+ Dev A 		= 10.00 GB
+ OS    		= RedHat
+[0;36m@@ -105,12 +105,12 @@[0m
+[0;36m[0m Arch  		= x86_64
+ Arch  		= x86_64
+ Time  		= 2024-06-27
+[0;31m-Hour  		= 09:29:39[0m
+[0;31m[0m[0;32m+Hour  		= 09:32:31[0m
+[0;32m[0m IP    		= 172.25.250.12
+ Dev A 		= 10.00 GB
+ OS    		= RedHat
+ Kernel		= 5.14.0-70.13.1.el9_0.x86_64
+[0;31m-Free  		= 431[0m
+[0;31m[0m[0;32m+Free  		= 426[0m
+[0;32m[0m manager 	= Not Defined
+ Location 	= Not Defined
+ Dept Name 	= Not Applicable
+
+
+2024-06-27 13:32:35,212 p=21 u=root n=ansible | changed: [workstation.lab.example.com]
+2024-06-27 13:32:35,239 p=21 u=root n=ansible | PLAY RECAP ********************************************************************************************
+2024-06-27 13:32:35,239 p=21 u=root n=ansible | 172.25.250.12              : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:32:35,239 p=21 u=root n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:32:35,239 p=21 u=root n=ansible | serverb.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:32:35,240 p=21 u=root n=ansible | serverc.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:32:35,240 p=21 u=root n=ansible | serverd.lab.example.com    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-27 13:32:35,240 p=21 u=root n=ansible | workstation.lab.example.com : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

@@ -1142,3 +1142,14 @@
 2024-06-26T14:25:03.533989+00:00 ERROR 'ansible_navigator.actions.collections._parse' /usr/share/ansible/collections/ansible_collections/redhat/satellite/roles/subnets/meta/main.yml Failed to find main.yml for role in redhat.satellite.
 2024-06-26T14:25:03.534010+00:00 ERROR 'ansible_navigator.actions.collections._parse' /usr/share/ansible/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/argument_specs.yml Failed to find argument_specs.yml for role in redhat.satellite.
 2024-06-26T14:25:03.534030+00:00 ERROR 'ansible_navigator.actions.collections._parse' /usr/share/ansible/collections/ansible_collections/redhat/satellite/roles/sync_plans/meta/main.yml Failed to find main.yml for role in redhat.satellite.
+2024-06-27T13:10:12.251807+00:00 WARNING 'ansible_navigator.run' Dirty exit, killing the pid
+2024-06-27T13:10:40.101661+00:00 WARNING 'ansible_navigator.run' Dirty exit, killing the pid
+2024-06-27T13:12:38.229567+00:00 ERROR 'ansible_navigator.actions.run_e625.run' Can not step back while playbook in progress, :q! to exit
+2024-06-27T13:12:39.289766+00:00 ERROR 'ansible_navigator.actions.run_e625.run' Can not step back while playbook in progress, :q! to exit
+2024-06-27T13:12:40.037388+00:00 ERROR 'ansible_navigator.actions.run_e625.run' Can not step back while playbook in progress, :q! to exit
+2024-06-27T13:12:40.877040+00:00 ERROR 'ansible_navigator.actions.run_e625.run' Can not step back while playbook in progress, :q! to exit
+2024-06-27T13:12:41.886419+00:00 WARNING 'ansible_navigator.actions.run_e625._prepare_to_quit' Quit requested but playbook running, try q! or quit!
+2024-06-27T13:12:45.628468+00:00 ERROR 'ansible_navigator.actions.run_e625.run' Can not step back while playbook in progress, :q! to exit
+2024-06-27T13:12:46.317351+00:00 WARNING 'ansible_navigator.actions.run_e625._prepare_to_quit' Quit requested but playbook running, try q! or quit!
+2024-06-27T13:12:47.095423+00:00 WARNING 'ansible_navigator.actions.run_e625._prepare_to_quit' Quit requested but playbook running, try q! or quit!
+2024-06-27T13:12:47.575068+00:00 WARNING 'ansible_navigator.run' Dirty exit, killing the pid
