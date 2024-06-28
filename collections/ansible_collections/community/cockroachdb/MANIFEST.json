@@ -1,0 +1,31 @@
+{
+ "collection_info": {
+  "namespace": "community",
+  "name": "cockroachdb",
+  "version": "0.3.1",
+  "authors": [
+   "Ansible community"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "database",
+   "cockroachdb"
+  ],
+  "description": "CockroachDB collection for Ansible",
+  "license": [],
+  "license_file": "LICENSE",
+  "dependencies": {},
+  "repository": "https://github.com/ansible-collections/community.cockroachdb",
+  "documentation": "https://github.com/ansible-collections/community.cockroachdb",
+  "homepage": "https://github.com/ansible-collections/community.cockroachdb",
+  "issues": "https://github.com/ansible-collections/community.cockroachdb/issues"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "191dae260aca1d15b66fcd1c834fde3b8ea2175794cd5dbc69ba14795fde7b4c",
+  "format": 1
+ },
+ "format": 1
+}

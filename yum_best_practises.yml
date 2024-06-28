@@ -1,0 +1,25 @@
+- name: Setup Web Server Configuration Play
+  hosts: servera*
+  become: true
+  remote_user: devops
+  gather_facts: false
+  vars:
+    some:
+    - httpd
+    - vsftpd
+  tasks:
+    - name: Install Web Server
+      ansible.builtin.dnf:
+        # name: "{{ item }}" 
+        name: 
+          - httpd
+          - vsftpd
+        state: present
+      # loop: "{{ some }}"
+
+
+    - name: Start Web Service
+      ansible.builtin.service:
+        name: "{{ item }}"
+        state: started
+      loop: "{{ some }}"

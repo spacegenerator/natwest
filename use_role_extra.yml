@@ -1,0 +1,19 @@
+- name: Extra from Outside
+  hosts: servera*
+  vars:
+    timesync_ntp_servers:
+      - hostname: foo.example.com
+        iburst: yes
+      - hostname: bar.example.com
+        iburst: yes
+      - hostname: baz.example.com
+        iburst: yes
+
+  roles:
+    - role: community.grafana.grafana
+    - role: rhel-system-roles.timesync
+
+  tasks:
+    - name: Create a folder
+      community.grafana.grafana_folder:
+        url: "https://grafana.example.com"

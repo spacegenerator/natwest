@@ -1,0 +1,23 @@
+---
+# handlers file for web_server
+
+- name: Stupid Handlers
+  ansible.builtin.debug:
+    msg: "No One called ME"
+
+- name: App Deployed
+  ansible.builtin.debug:
+    msg: "Application Deployed"
+
+- name: Web Package Installed
+  ansible.builtin.debug:
+    msg: "Web Package Installed"
+
+- name: Restart Web Service
+  ansible.builtin.service:
+    name: httpd
+    state: restarted
+
+- name: Information Collected
+  ansible.builtin.debug:
+    msg: "System Information Page Deployed"

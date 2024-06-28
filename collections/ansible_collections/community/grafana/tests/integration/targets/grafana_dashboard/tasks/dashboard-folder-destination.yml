@@ -1,0 +1,38 @@
+---
+- name: Create Dashboard from file | check mode | folder does not exist
+  community.grafana.grafana_dashboard:
+    grafana_url: "{{ grafana_url }}"
+    grafana_user: "{{ grafana_username }}"
+    grafana_password: "{{ grafana_password }}"
+    state: present
+    commit_message: Updated by ansible
+    path: /tmp/dashboard.json
+    overwrite: true
+    folder: inexistent
+  check_mode: true
+  register: dfff_result1
+  ignore_errors: true
+- ansible.builtin.assert:
+    that:
+      - dfff_result1.failed == true
+      - dfff_result1.changed == false
+      - "dfff_result1.msg == 'error : Dashboard folder \\'inexistent\\' does not exist.'"
+
+- name: Create Dashboard from file | run mode | folder does not exist
+  community.grafana.grafana_dashboard:
+    grafana_url: "{{ grafana_url }}"
+    grafana_user: "{{ grafana_username }}"
+    grafana_password: "{{ grafana_password }}"
+    state: present
+    commit_message: Updated by ansible
+    path: /tmp/dashboard.json
+    overwrite: true
+    folder: inexistent
+  check_mode: false
+  register: dfff_result2
+  ignore_errors: true
+- ansible.builtin.assert:
+    that:
+      - dfff_result2.failed == true
+      - dfff_result2.changed == false
+      - "dfff_result2.msg == 'error : Dashboard folder \\'inexistent\\' does not exist.'"

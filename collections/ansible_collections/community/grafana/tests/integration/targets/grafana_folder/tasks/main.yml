@@ -1,0 +1,6 @@
+---
+- name: Folder creation and deletion
+  ansible.builtin.include_tasks: create-delete.yml
+
+- name: Folder creation and deletion for organization
+  ansible.builtin.include_tasks: org.yml

@@ -1,0 +1,31 @@
+- name: Facts Demo
+  hosts: servera*
+  gather_facts: false
+
+  tasks:
+    - name: Collect Limited Facts
+      ansible.builtin.setup:
+        gather_subset:
+          - 'all'
+
+    - name: Print the Facts 1
+      ansible.builtin.copy:
+        dest: /tmp/system
+        content: |
+              Arch  = {{ ansible_facts.architecture }}
+              IP    = {{ ansible_default_ipv4.address }}
+    - name: Collect Package Facts
+      ansible.builtin.package_facts:
+        
+    - name: Print Package
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['packages']['httpd'][0]['version'] }}"
+
+    
+
+    - name: Collect Service Facts
+      ansible.builtin.service_facts:
+        
+    - name: Print Service Status 
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['services']['httpd.service']['state'] }}"

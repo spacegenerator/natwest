@@ -1,0 +1,14 @@
+---
+# tasks file for windows_iis
+- name: Install using win_feature
+  win_feature:
+    name: Web-Server
+    state: present
+    include_management_tools: yes
+  notify: Restart W3SVC Service
+
+- name: Create File
+  win_copy:
+    content: "{{get_content}}"
+    dest: c:\inetpub\wwwroot\index.html
+  notify: Restart W3SVC Service

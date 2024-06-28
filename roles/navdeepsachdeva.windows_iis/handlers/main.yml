@@ -1,0 +1,6 @@
+---
+# handlers file for windows_iis
+- name: Restart W3SVC Service
+  win_service:
+    name: w3svc
+    state: started

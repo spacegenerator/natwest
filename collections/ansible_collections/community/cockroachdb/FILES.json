@@ -1,0 +1,481 @@
+{
+ "files": [
+  {
+   "name": ".",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".github",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".github/workflows",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".github/workflows/ansible-test-plugins.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1a8e77073d1d3fbf861e5b318c45c8b0bc51ddd9fdc1e75c8c9f6199fafa5a26",
+   "format": 1
+  },
+  {
+   "name": "changelogs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "changelogs/fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "changelogs/fragments/.keep",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "changelogs/changelog.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "036676935542b305fdb2939f3a3888e866b067aba60a28fedd95b3245983628b",
+   "format": 1
+  },
+  {
+   "name": "changelogs/config.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b08e8df331aba7a2f4d91a48494362cc16ae2f3644a7750f3e906666b9067248",
+   "format": 1
+  },
+  {
+   "name": "meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "df18179bb2f5447a56ac92261a911649b96821c0b2c08eea62d5cc6b0195203f",
+   "format": 1
+  },
+  {
+   "name": "plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments/cockroachdb.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c6041f7f5d5e990ff48f8ede5c5552b1233029b2eb3b53d2aae713be4e1b503c",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/cockroachdb.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c3e319f138ab50e204c2d1e8165cf94bbe20a7b05bf691fca621c5c4f0999cb2",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/cockroachdb_db.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9401c4b0250b0d54fc6fc31adb750ffe386aaca94c21a96a32fe6f673ec8797a",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/cockroachdb_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f66cb6f73f7d65d605fac55511adca78891ba2d6b4f1c7af0103b39c60dd798c",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/cockroachdb_query.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c6cfb1caadd62e67fc6b49be863d1b16afd1bcb2a442372f2bdcf5494602bcbb",
+   "format": 1
+  },
+  {
+   "name": "tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_db",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_db/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_db/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2d3281141ea58710d408ddb00dbf1647094cac2dd7531168a233e3e031b5cfab",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_db/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_db/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ff92a2d4c953d6ca3090150bc912081988ed6b6e3c5b19a3feea1fc1e30f1ce4",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_info",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_info/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_info/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2d3281141ea58710d408ddb00dbf1647094cac2dd7531168a233e3e031b5cfab",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_info/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_info/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a41d3cdcd5ea3af321e20201366369954e1f42c48c3bbc0ca4392a82548e4acf",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_query",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_query/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_query/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2d3281141ea58710d408ddb00dbf1647094cac2dd7531168a233e3e031b5cfab",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_query/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/cockroachdb_query/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e82908f320c929b89ac62845cd89721406fbe19d18af090432fcdc6f40372c1b",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9c77c7fa5f981a723aa0618e5cba92986d67a0cf17810ea5fee4a79070175f60",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/files/service.conf",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f2011cb3223d01f5e20dabb547b847e7aecc311dad6491e3abc2117ccbba2143",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/tasks/install.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4ff6ec8827972385dc0ca61a38aa43aa36f149944d358d3b967c01b95f942bdc",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2777b74f27dfbc3b296b75148e229bfd94ab10dd2e6b62a30c9f763dddf75af8",
+   "format": 1
+  },
+  {
+   "name": "tests/integration/targets/setup_cockroachdb/tasks/ssl.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f53a4dedfc6b9f7a0a6b7ba4e18f86bb7b6e95ca062f49bf3b58d203691ab520",
+   "format": 1
+  },
+  {
+   "name": "tests/unit",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/module_utils",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/module_utils/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/module_utils/test_cockroachdb.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5a43615427d1e4dfd7ea04e43382cbf9f06b51b0b454634d624523517820df1e",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_cockroachdb_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e074ecfb3af87582046a60ae848d354e47ebd9585b9db936246d281007d124fe",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_cockroachdb_query.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0f05fbe9f4e304107a3beef74a756f1f9319b92ba5d4681d2016f7da86132366",
+   "format": 1
+  },
+  {
+   "name": ".gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c752de8978fe2127f6953ddb35eaa69bc3249ae8b826d5cc75340e442501c346",
+   "format": 1
+  },
+  {
+   "name": "CHANGELOG.rst",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4f9a5ed68e0ebde1c3097f453abcb0f573d985ccbfae6c33a7d52611ce37f95d",
+   "format": 1
+  },
+  {
+   "name": "CODE_OF_CONDUCT.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "14ec928234a7ed52bf8b458d31e4862335111e477e4dbe7fb543686c24115140",
+   "format": 1
+  },
+  {
+   "name": "CONTRIBUTING.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "537598e3a4b1c7e00d763177f92a0b2a66b0c02747dd47f847bc6a03bcb50cc0",
+   "format": 1
+  },
+  {
+   "name": "CONTRIBUTORS",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "30c549bc3265d59ddcd886331ba646f4df22c4da4f9b93ab9a44c167869fa327",
+   "format": 1
+  },
+  {
+   "name": "LICENSE",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+   "format": 1
+  },
+  {
+   "name": "MAINTAINERS",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c2ca8b93bc49f985c053f6f2796ea26cf807f9ecfe24ba82b9318ae113c3bb37",
+   "format": 1
+  },
+  {
+   "name": "MAINTAINING.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1975f95bf40f8a9f3d5648b23705374e7712efb8012881d7196eb4e002c0f0a7",
+   "format": 1
+  },
+  {
+   "name": "README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7fef886617fed6d6c914e80f279bb3e3d0c8799aa3ffbece71a0f35665d73bbd",
+   "format": 1
+  },
+  {
+   "name": "REVIEW_CHECKLIST.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "91ad4aff2cc14b98f81fbe2d90609c5a69ed96b6d836387a9c697c1112e603c0",
+   "format": 1
+  },
+  {
+   "name": "codecov.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a99bede2807c494ba24736cfc5b8cb55157a778781232d74bb937455d911b23a",
+   "format": 1
+  },
+  {
+   "name": "simplified_bsd.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f11e51ed1eec39ad21d458ba44d805807a301c17ee9fe39538ccc9e2b280936c",
+   "format": 1
+  }
+ ],
+ "format": 1
+}

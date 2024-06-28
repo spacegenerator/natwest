@@ -1,0 +1,25 @@
+
+
+<html>
+<head> <title>Information Page </title></head>
+<body>
+## Control Node Information for {{ inventory_hostname }} ##
+<br/>
+
+Inventory Host	= {{ inventory_hostname }}<br/>
+FQDN  		= {{ ansible_facts['fqdn'] }}<br/>
+Host  		= {{ ansible_hostname }}<br/>
+My Groups 	= {{ group_names }}<br/>
+Arch  		= {{ ansible_facts['architecture'] }}<br/>
+Arch  		= {{ ansible_facts.architecture }}<br/>
+Time  		= {{ ansible_date_time['date'] }}<br/>
+Hour  		= {{ ansible_date_time['time'] }}<br/>
+IP    		= {{ ansible_default_ipv4.address }}<br/>
+Dev A 		= {{ ansible_facts['devices']['vda']['size'] }}<br/>
+OS    		= {{ ansible_facts['distribution'] }}<br/>
+Kernel		= {{ ansible_facts['kernel'] }}<br/>
+Free  		= {{ ansible_memory_mb.real.free }}<br/>
+manager 	= {{ ansible_local['emp']['dept_info']['dept_manager'] | default('Not Defined') }}<br/>
+Location 	= {{ ansible_local['emp']['emp_info']['emp_location'] | default('Not Defined')}}<br/>
+Dept Name 	= {{ ansible_local['emp']['dept_info']['dept_name'] | default('Not Applicable') }}<br/>
+

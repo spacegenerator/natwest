@@ -1,0 +1,62 @@
+- name: Run the Role
+  hosts: servera*
+  pre_tasks:
+    - name: Check Pre-Requisites Memory, Arch
+      ansible.builtin.assert:
+        that:
+          - ansible_facts['architecture'] == "x86_64"
+          - ansible_memory_mb.real.free > 300
+        fail_msg: "Not Enough Memory / Wrong Arch"
+        success_msg: "Pre-Requisites Match"
+
+    - name: Pre Task Sleep
+      ansible.builtin.command: sleep 2
+      notify:
+        - pre_handler
+
+  # roles:
+  #   - role: web_server
+  #     become: true
+  #     web_server_index_content: "From Playbook"
+
+
+  tasks:
+    - name: Import/Include a ROle
+      ansible.builtin.include_role:
+      #ansible.builtin.import_role:
+        name: web_server
+      when: something is defined
+      vars:
+        web_server_index_content: "Level 20"
+
+    - name: Extra Task
+      ansible.builtin.command: sleep 2
+      notify:
+        - extra_handler
+
+  post_tasks:
+    - name: Ping the Host
+      ansible.builtin.ping:
+
+    - name: Curl the App Page
+      ansible.builtin.uri:
+        url: http://servera.lab.example.com/system.html
+        return_content: true
+       
+    - name: Post Task Sleep
+      ansible.builtin.command: sleep 2
+      notify:
+        - post_handler
+
+  handlers:
+    - name: extra_handler
+      ansible.builtin.debug:
+        msg: "Just small sleep"
+
+    - name: pre_handler
+      ansible.builtin.debug:
+        msg: "Our Bank services down from 12:00 - 4:00 AM"
+
+    - name: post_handler
+      ansible.builtin.debug:
+        msg: "Bank services Up Now Enjoy"

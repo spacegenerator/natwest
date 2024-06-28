@@ -1,0 +1,43 @@
+- name: Tags Demo
+  hosts: servera*
+  gather_facts: no
+  tasks:
+  - name: Task 1 in Development
+    debug:
+      msg: "Task 1 for Development"
+    tags:
+    - dev
+    - windows
+    - all
+  - name: Task 1 in Production
+    debug:
+      msg: "Task 1 for Production"
+    tags:
+    - prod
+
+  - name: Task which run ALWAYS
+    debug:
+      msg: "I am going to run always"
+    tags:
+    - always
+
+  - name: No Tag here please
+    debug:
+      msg: "Untagged with precious metal"
+
+  - name: Destroy the Datacenter 1
+    debug:
+      msg: "Emergency get out of here"
+    #tags:
+    #- never
+
+  - name: Task 2 in Development
+    debug:
+      msg: "Task 2 for Development"
+    tags:
+    - dev
+  - name: Task 2 in Production
+    debug:
+      msg: "Task 2 for Production"
+    tags:
+    - prod
